@@ -1,0 +1,21 @@
+language: node_js
+branches:
+  only:
+    - master
+    - production
+before_install:
+  - chmod +x ./build-env.sh
+  - ./build-env.sh
+  - yarn
+  - yarn build
+deploy:
+  - provider: firebase
+    project: 'uat-policygenius-reimagined'
+    skip_cleanup: true
+    on:
+      branch: master
+  - provider: firebase
+    project: 'policygenius-reimagined'
+    skip_cleanup: true
+    on:
+      branch: production

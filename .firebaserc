@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "prod": "policygenius-reimagined",
+    "uat": "uat-policygenius-reimagined"
+  }
+}
