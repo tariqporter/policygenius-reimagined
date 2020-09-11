@@ -1,8 +1,4 @@
 language: node_js
-branches:
-  only:
-    - master
-    - production
 before_install:
   - chmod +x ./build-env.sh
   - ./build-env.sh
