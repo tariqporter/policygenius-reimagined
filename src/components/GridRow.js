@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { TABLET_MEDIA_QUERY, DESKTOP_MEDIA_QUERY, LARGE_DESKTOP_MEDIA_QUERY } from 'styles/mediaQueries';
 
-export const GridRow = styled.div`
+const GridRow = styled.div`
   display: none;
   /*
     IE Support
@@ -80,3 +80,5 @@ export const GridRow = styled.div`
     margin: 0 auto;
   }
 `;
+
+export default GridRow;

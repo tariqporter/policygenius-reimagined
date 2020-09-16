@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { TABLET_MEDIA_QUERY, DESKTOP_MEDIA_QUERY } from 'styles/mediaQueries';
 
-export const GridCol = styled.div`
+const GridCol = styled.div`
   ${({ mobile }) =>
     mobile
       ? `grid-column: auto / span ${mobile};
@@ -25,3 +25,5 @@ export const GridCol = styled.div`
     ${({ desktop, tablet }) => desktop && !tablet && 'display: inline'}
   }
 `;
+
+export default GridCol;
