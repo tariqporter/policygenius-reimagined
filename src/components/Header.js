@@ -1,8 +1,19 @@
 import React from 'react';
-import { Title } from 'styledComponents';
+import styled from 'styled-components';
+import { PgLogoBlack } from 'icons';
+
+const HeaderStyle = styled.div`
+  display: flex;
+  height: 80px;
+  background-color: #221f20;
+`;
 
 const Header = () => {
-  return <Title size="64">Shop the market and get insurance right</Title>;
+  return (
+    <HeaderStyle>
+      <PgLogoBlack style={{ margin: '20px 0 10px 20px', color: '#fff' }} />
+    </HeaderStyle>
+  );
 };
 
 export default Header;
