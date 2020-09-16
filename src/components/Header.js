@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PgLogoBlack } from 'icons';
+import { Link } from 'react-router-dom';
 
 const HeaderStyle = styled.div`
   display: flex;
@@ -16,7 +17,9 @@ const HeaderLogo = styled(PgLogoBlack)`
 const Header = () => {
   return (
     <HeaderStyle>
-      <HeaderLogo />
+      <Link to="/">
+        <HeaderLogo />
+      </Link>
     </HeaderStyle>
   );
 };
