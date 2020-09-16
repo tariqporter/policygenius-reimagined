@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from './logo.svg';
 import './App.css';
-import GlobalFonts from './fonts/fonts.js';
+import GlobalFonts from 'fonts/fonts.js';
 
 const Title = styled.div`
   font-family: 'SharpSans Display No1 Bold', Arial, sans-serif;
