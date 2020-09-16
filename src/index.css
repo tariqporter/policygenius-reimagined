@@ -1,13 +1,40 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@font-face {
+  font-family: 'SharpSans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('SharpSans Medium'), url('/fonts/SharpSans-Medium-min.woff2') format('woff2'),
+    url('/fonts/SharpSans-Medium-min.woff') format('woff');
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: 'SharpSans';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local('SharpSans Bold'), url('/fonts/SharpSans-Bold-min.woff2') format('woff2'),
+    url('/fonts/SharpSans-Bold-min.woff') format('woff');
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: 'SharpSans Display No1 Bold';
+  font-style: normal;
+  font-display: swap;
+  src: local('SharpSans Display No1 Bold'), url('/fonts/SharpSansDispNo1-Bold-min.woff2') format('woff2'),
+    url('/fonts/SharpSansDispNo1-Bold-min.woff') format('woff');
+  unicode-range: U+000-5FF;
 }
