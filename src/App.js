@@ -1,31 +1,24 @@
 import React from 'react';
-import styled from 'styled-components';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import GlobalFonts from 'fonts/fonts.js';
-
-const Title = styled.div`
-  font-family: 'SharpSans Display No1 Bold', Arial, sans-serif;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 0.7px;
-  font-size: ${(props) => props.fontSize};
-`;
-
-const Text = styled.div`
-  font-family: 'SharpSans', Arial, sans-serif;
-  font-weight: 400;
-  margin: 0;
-  letter-spacing: 0.1px;
-  font-size: ${(props) => props.fontSize};
-`;
+import Header from 'components/Header';
+import Home from 'components/Home';
+import SelectProduct from 'components/SelectProduct';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <GlobalFonts />
-
-      <Title fontSize="64px">Shop the market and get insurance right</Title>
-    </div>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/select-product/:name?">
+          <SelectProduct />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
