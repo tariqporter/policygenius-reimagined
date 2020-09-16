@@ -8,10 +8,15 @@ const HeaderStyle = styled.div`
   background-color: #221f20;
 `;
 
+const HeaderLogo = styled(PgLogoBlack)`
+  margin: 20px 0 10px 20px;
+  color: #fff;
+`;
+
 const Header = () => {
   return (
     <HeaderStyle>
-      <PgLogoBlack style={{ margin: '20px 0 10px 20px', color: '#fff' }} />
+      <HeaderLogo />
     </HeaderStyle>
   );
 };
