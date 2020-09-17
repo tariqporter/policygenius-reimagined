@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Title, Text } from 'styledComponents';
+import { Title, Subtitle } from 'styledComponents';
 import CtaButton from './CtaButton';
 import GridCol from './GridCol';
 import GridRow from './GridRow';
@@ -71,11 +71,11 @@ const Section1 = (props) => {
               <Title as="h1" size="64" color="#fff" style={{ margin: '12px 0' }}>
                 Financial protection all in one place
               </Title>
-              <Text as="h2" size="18" color="#fff" style={{ margin: '12px 0' }}>
+              <Subtitle as="h2" size="18" color="#fff" style={{ margin: '12px 0' }}>
                 Unbiased expert advice to help you make decisions for you or your family that you can feel good about
-              </Text>
+              </Subtitle>
               <CtaButton>
-                <Text>Get Started</Text>
+                <Subtitle size="18">Get Started</Subtitle>
                 <ChevronRight />
               </CtaButton>
             </GridCol>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ChevronDown, PgLogoBlack } from 'icons';
 import { Link } from 'react-router-dom';
 import navLinks from 'data/navLinks';
-import { Text } from 'styledComponents';
+import { Title } from 'styledComponents';
 
 const HeaderStyle = styled.div`
   display: flex;
@@ -44,7 +44,7 @@ const Header = () => {
         <NavSection>
           {navLinks.map((navLink) => (
             <NavLink key={navLink.id}>
-              <Text>{navLink.name}</Text>
+              <Title size="18">{navLink.name}</Title>
               {navLink.children && <ChevronDown style={{ marginLeft: 10, width: 14, height: 20 }} />}
             </NavLink>
           ))}
