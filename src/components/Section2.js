@@ -114,7 +114,9 @@ const Section2 = (props) => {
                   Unbiased expert advice to help you make decisions for you or your family that you can feel good about
                 </Text>
                 <CtaButton>
-                  <Text>Get Started</Text>
+                  <Title size="18" style={{ paddingRight: 10 }}>
+                    Get Started
+                  </Title>
                   <ChevronRight />
                 </CtaButton>
               </GridCol>

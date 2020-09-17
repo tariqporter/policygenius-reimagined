@@ -3,10 +3,13 @@ import styled from 'styled-components';
 
 const CtaStyle = styled.button`
   padding: 12px;
+  width: 172px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   border: none;
   border-radius: 0;
-  height: 50px;
   outline: none;
   position: relative;
   background-color: #000;

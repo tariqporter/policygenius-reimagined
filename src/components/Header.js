@@ -3,35 +3,47 @@ import styled from 'styled-components';
 import { ChevronDown, PgLogoBlack } from 'icons';
 import { Link } from 'react-router-dom';
 import navLinks from 'data/navLinks';
-import { Title } from 'styledComponents';
+import { Title, Subtitle } from 'styledComponents';
+import CtaButton from './CtaButton';
+import { ChevronRight } from 'icons';
 
 const HeaderStyle = styled.div`
   display: flex;
   align-items: center;
-  height: 80px;
-  background-color: #221f20;
+  height: 100px;
+  background-color: #d84713;
   position: absolute;
   width: 100%;
   z-index: 1000;
 `;
 
 const NavSection = styled.div`
+  flex: 1;
   display: flex;
-  margin: 0 auto;
+  justify-content: center;
+  margin-left: auto;
 `;
 
 const NavLink = styled.div`
   cursor: pointer;
   color: #fff;
-  padding: 0 20px;
+  padding: 0 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const HeaderLogo = styled(PgLogoBlack)`
-  margin-left: 30px;
+  margin-left: 64px;
   color: #fff;
+  margin-right: auto;
+`;
+
+const CTASection = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
 `;
 
 const Header = () => {
@@ -49,6 +61,17 @@ const Header = () => {
             </NavLink>
           ))}
         </NavSection>
+        <CTASection>
+          <NavLink style={{ marginRight: 30 }}>
+            <Title size="18">Log In</Title>
+          </NavLink>
+          <CtaButton style={{ marginRight: 64 }}>
+            <Title size="18" style={{ paddingRight: 10 }}>
+              Get Started
+            </Title>
+            <ChevronRight />
+          </CtaButton>
+        </CTASection>
       </HeaderStyle>
       <div style={{ height: 80 }} />
     </>
