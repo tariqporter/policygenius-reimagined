@@ -61,8 +61,9 @@ const ImageStyle = styled.img`
 `;
 
 const Section1 = (props) => {
+  const { ...other } = props;
   return (
-    <SectionStyle>
+    <SectionStyle {...other}>
       <GridRow mobile tablet desktop>
         <GridCol mobile={4} tablet={12} desktop={12}>
           <GridRow mobile tablet desktop>
