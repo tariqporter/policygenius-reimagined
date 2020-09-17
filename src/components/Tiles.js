@@ -47,14 +47,10 @@ const Tile = styled.div`
   border-radius: 10px;
   margin: 20px;
   ${({ isVisible }) =>
-    isVisible
-      ? css`
-          animation: 1.25s ${slideInDown};
-        `
-      : `
-    opacity: 0;
-    transform: translateY(-100px);
-  `};
+    isVisible &&
+    css`
+      animation: 1.25s ${slideInDown} backwards;
+    `};
   ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
