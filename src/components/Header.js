@@ -3,44 +3,62 @@ import styled from 'styled-components';
 import { ChevronDown, PgLogoBlack } from 'icons';
 import { Link } from 'react-router-dom';
 import navLinks from 'data/navLinks';
-import { Title } from 'styledComponents';
+import { Title, Subtitle } from 'styledComponents';
+import CtaButton from './CtaButton';
+import { ChevronRight } from 'icons';
 
 const HeaderStyle = styled.div`
   display: flex;
   align-items: center;
-  height: 80px;
-  background-color: #221f20;
-  position: absolute;
-  width: 100%;
+  height: 100px;
+  background-color: #d84713;
+  position: relative;
   z-index: 1000;
 `;
 
 const NavSection = styled.div`
   display: flex;
   margin: 0 auto;
+  flex-grow: 3;
+  justify-content: center;
+  flex-basis: 0;
 `;
 
 const NavLink = styled.div`
   cursor: pointer;
   color: #fff;
-  padding: 0 20px;
+  padding: 0 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const HeaderLogo = styled(PgLogoBlack)`
-  margin-left: 30px;
   color: #fff;
+`;
+
+const CTASection = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+  flex-basis: 0;
+`;
+
+const LogoSection = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
 `;
 
 const Header = () => {
   return (
     <>
-      <HeaderStyle>
-        <Link to="/">
-          <HeaderLogo />
-        </Link>
+      <HeaderStyle style={{ paddingRight: 64, paddingLeft: 64 }}>
+        <LogoSection>
+          <Link to="/">
+            <HeaderLogo />
+          </Link>
+        </LogoSection>
         <NavSection>
           {navLinks.map((navLink) => (
             <NavLink key={navLink.id}>
@@ -49,8 +67,18 @@ const Header = () => {
             </NavLink>
           ))}
         </NavSection>
+        <CTASection>
+          <NavLink style={{ marginRight: 30 }}>
+            <Title size="18">Log In</Title>
+          </NavLink>
+          <CtaButton>
+            <Title size="18" style={{ paddingRight: 10 }}>
+              Get Started
+            </Title>
+            <ChevronRight />
+          </CtaButton>
+        </CTASection>
       </HeaderStyle>
-      <div style={{ height: 80 }} />
     </>
   );
 };

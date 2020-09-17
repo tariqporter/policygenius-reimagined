@@ -75,7 +75,9 @@ const Section1 = (props) => {
                 Unbiased expert advice to help you make decisions for you or your family that you can feel good about
               </Subtitle>
               <CtaButton>
-                <Subtitle size="18">Get Started</Subtitle>
+                <Title size="18" style={{ paddingRight: 10 }}>
+                  Get Started
+                </Title>
                 <ChevronRight />
               </CtaButton>
             </GridCol>
