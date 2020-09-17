@@ -10,7 +10,7 @@ import { ChevronRight } from 'icons';
 const HeaderStyle = styled.div`
   display: flex;
   align-items: center;
-  height: 96px;
+  height: 80px;
   transition: background-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
   background-color: ${({ isScrolling }) => (isScrolling ? '#000' : '#d84713')};
   position: fixed;
