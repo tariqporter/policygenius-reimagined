@@ -48,7 +48,7 @@ const slideInDown = keyframes`
 
 const ImageBorder = styled.div`
   background: #fff;
-  padding: 50px;
+  padding: 40px;
   box-shadow: 10px 10px 25px 1px rgba(43, 39, 39, 0.25);
   animation: 1.25s ${slideInDown};
 `;
@@ -83,11 +83,12 @@ const Section1 = (props) => {
               </div>
             </GridCol>
             <GridCol mobile={1} tablet={2} desktop={2} />
-            <GridCol mobile={1} tablet={5} desktop={5}>
+            <GridCol mobile={1} tablet={5} desktop={4} style={{ marginTop: 70 }}>
               <ImageBorder>
                 <ImageStyle src={womanPool} alt="Woman by Pool" />
               </ImageBorder>
             </GridCol>
+            <GridCol mobile={1} tablet={2} desktop={1} />
           </GridRow>
         </GridCol>
       </GridRow>

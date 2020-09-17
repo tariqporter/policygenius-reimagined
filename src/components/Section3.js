@@ -32,6 +32,8 @@ const skew = keyframes`
 
 const SectionStyle = styled.div`
   height: 615px;
+  margin-top: 150px;
+  margin-bottom: 50px;
 `;
 
 const SectionBg = styled.div`
