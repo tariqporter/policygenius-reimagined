@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Title, Text } from 'styledComponents';
+import { Title, Subtitle } from 'styledComponents';
 import CtaButton from './CtaButton';
 import GridCol from './GridCol';
 import GridRow from './GridRow';
@@ -65,41 +65,43 @@ const Section3 = (props) => {
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 30px 0 0', maxWidth: 'none' }}>
         <GridCol mobile={3} tablet={10} desktop={10} style={{ position: 'relative' }}>
           <SectionBg>
-            <GridRow mobile tablet desktop>
-              <GridCol mobile={2} tablet={5} desktop={5}>
-                <Title as="h1" size="64" color="#fff" style={{ margin: '12px 0' }}>
+            <GridRow mobile tablet desktop={10}>
+              <GridCol mobile={1} tablet={5} desktop={1} />
+              <GridCol mobile={2} tablet={5} desktop={6}>
+                <Title as="h1" size="64" color="#fff">
                   Not your average broker
                 </Title>
-                <Text as="h2" size="18" color="#fff" style={{ margin: '12px 0' }}>
+                <Subtitle as="h2" size="18" color="#fff" style={{ margin: '30px 0' }}>
                   We are on a mission to help bring you the financial protection you need, and that means we offer more
                   than just insurance.
-                </Text>
+                </Subtitle>
                 <CtaButton>
-                  <Text>Get Started</Text>
+                  <Title size="18" style={{ paddingRight: 10 }}>
+                    Get Started
+                  </Title>
                   <ChevronRight />
                 </CtaButton>
               </GridCol>
-              <GridCol mobile={1} tablet={5} desktop={5} />
-              <GridCol mobile={1} tablet={2} desktop={2}>
-                <Tiles>
-                  <Tile top={0} left={0}>
-                    <LifeTile size={6} />
-                  </Tile>
-                  <Tile top={100} left={-200}>
-                    <DisabilityTile size={6} />
-                  </Tile>
-                  <Tile top={280} left={-100}>
-                    <HomeTile size={6} />
-                  </Tile>
-                  <Tile top={380} left={-300}>
-                    <RentersTile size={6} />
-                  </Tile>
-                </Tiles>
-              </GridCol>
+              <GridCol mobile={1} tablet={5} desktop={3} />
             </GridRow>
           </SectionBg>
         </GridCol>
-        <GridCol mobile={1} tablet={2} desktop={2}></GridCol>
+        <GridCol mobile={1} tablet={2} desktop={2}>
+          <Tiles>
+            <Tile top={0} left={0}>
+              <LifeTile size={6} />
+            </Tile>
+            <Tile top={100} left={-200}>
+              <DisabilityTile size={6} />
+            </Tile>
+            <Tile top={280} left={-100}>
+              <HomeTile size={6} />
+            </Tile>
+            <Tile top={380} left={-300}>
+              <RentersTile size={6} />
+            </Tile>
+          </Tiles>
+        </GridCol>
       </GridRow>
     </SectionStyle>
   );

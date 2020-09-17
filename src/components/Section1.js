@@ -8,7 +8,7 @@ import { ChevronRight } from 'icons';
 import womanPool from 'assets/woman_by_pool.png';
 
 const SectionStyle = styled.div`
-  height: 504px;
+  height: 80vh;
   background: #d84713;
   margin-top: 100px;
   margin-bottom: 50px;
@@ -66,9 +66,9 @@ const Section1 = (props) => {
       <GridRow mobile tablet desktop>
         <GridCol mobile={4} tablet={12} desktop={12}>
           <GridRow mobile tablet desktop>
-            <GridCol mobile={2} tablet={5} desktop={5}>
-              <div style={{ paddingTop: '25px' }}>
-                <Title as="h1" size="64" color="#fff" style={{ marginTop: '50px' }}>
+            <GridCol mobile={2} tablet={5} desktop={5} style={{ display: 'grid', alignItems: 'center' }}>
+              <div style={{ paddingBottom: '40px' }}>
+                <Title as="h1" size="64" color="#fff">
                   Financial protection all in one place
                 </Title>
                 <Subtitle as="h2" size="18" color="#fff" style={{ margin: '30px 0' }}>
@@ -83,12 +83,11 @@ const Section1 = (props) => {
               </div>
             </GridCol>
             <GridCol mobile={1} tablet={2} desktop={2} />
-            <GridCol mobile={1} tablet={5} desktop={4} style={{ marginTop: 70 }}>
+            <GridCol mobile={1} tablet={5} desktop={5} style={{ marginTop: 50 }}>
               <ImageBorder>
                 <ImageStyle src={womanPool} alt="Woman by Pool" />
               </ImageBorder>
             </GridCol>
-            <GridCol mobile={1} tablet={2} desktop={1} />
           </GridRow>
         </GridCol>
       </GridRow>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Title, Text } from 'styledComponents';
+import { Title, Subtitle } from 'styledComponents';
 import CtaButton from './CtaButton';
 import GridCol from './GridCol';
 import GridRow from './GridRow';
@@ -87,22 +87,28 @@ const Section2 = (props) => {
           <StepAbsolute top={200} left={-100}>
             <StepNumber>1</StepNumber>
             <div>
-              <Title size="20">Learn</Title>
-              <Text size="16">Unbiased expert advice from licensed non commissioned agents</Text>
+              <Title size="19">Learn</Title>
+              <Subtitle size="13" style={{ paddingTop: 5 }}>
+                Unbiased expert advice from licensed non commissioned agents
+              </Subtitle>
             </div>
           </StepAbsolute>
           <StepAbsolute top={350} left={0}>
             <StepNumber>2</StepNumber>
             <div>
-              <Title size="20">Compare Our Marketplace</Title>
-              <Text size="16">Unbiased expert advice from licensed non commissioned agents</Text>
+              <Title size="19">Compare Our Marketplace</Title>
+              <Subtitle size="13" style={{ paddingTop: 5 }}>
+                Unbiased expert advice from licensed non commissioned agents
+              </Subtitle>
             </div>
           </StepAbsolute>
           <StepAbsolute top={500} left={100}>
             <StepNumber>3</StepNumber>
             <div>
-              <Title size="20">Apply Through Policygenius</Title>
-              <Text size="16">Apply through us and let our licensed advisors handle the rest. </Text>
+              <Title size="19">Apply Through Policygenius</Title>
+              <Subtitle size="13" style={{ paddingTop: 5 }}>
+                Apply through us and let our licensed advisors handle the rest.{' '}
+              </Subtitle>
             </div>
           </StepAbsolute>
           <SectionBg>
@@ -113,10 +119,10 @@ const Section2 = (props) => {
                   <Title as="h1" size="64" color="#fff">
                     Save time & money
                   </Title>
-                  <Text as="h2" size="18" color="#fff" style={{ margin: '30px 0' }}>
+                  <Subtitle as="h2" size="18" color="#fff" style={{ margin: '30px 0' }}>
                     Unbiased expert advice to help you make decisions for you or your family that you can feel good
                     about
-                  </Text>
+                  </Subtitle>
                   <CtaButton>
                     <Title size="18" style={{ paddingRight: 10 }}>
                       Get Started

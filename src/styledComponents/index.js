@@ -17,7 +17,7 @@ export const Subtitle = styled.div`
   font-weight: 600;
   margin: 0;
   letter-spacing: 0.1px;
-  line-height: 28px;
+  line-height: ${(props) => (props.lineHeight ? `${props.lineHeight}px` : '28px')};
   font-size: ${(props) => `${props.size}px`};
 `;
 
