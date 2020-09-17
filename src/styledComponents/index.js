@@ -11,6 +11,16 @@ export const Title = styled.div`
   font-size: ${(props) => `${props.size}px`};
 `;
 
+export const Subtitle = styled.div`
+  ${({ color }) => color && `color: ${color};`}
+  font-family: 'SharpSans', Arial, sans-serif;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.1px;
+  line-height: 28px;
+  font-size: ${(props) => `${props.size}px`};
+`;
+
 export const Text = styled.div`
   ${({ color }) => color && `color: ${color};`}
   font-family: 'SharpSans', Arial, sans-serif;
@@ -18,6 +28,15 @@ export const Text = styled.div`
   margin: 0;
   letter-spacing: 0.1px;
   line-height: 28px;
+  font-size: ${(props) => `${props.size}px`};
+`;
+
+export const AccentTitle = styled.div`
+  ${({ color }) => color && `color: ${color};`}
+  font-family: 'Mercury Display';
+  margin: 0;
+  letter-spacing: 0.7px;
+  line-height: 34px;
   font-size: ${(props) => `${props.size}px`};
 `;
 
