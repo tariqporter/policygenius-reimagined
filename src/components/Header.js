@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ChevronDown, PgLogoBlack } from 'icons';
 import { Link } from 'react-router-dom';
 import navLinks from 'data/navLinks';
-import { Title, Subtitle } from 'styledComponents';
+import { Title } from 'styledComponents';
 import CtaButton from './CtaButton';
 import { ChevronRight } from 'icons';
 

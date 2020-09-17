@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Title, Subtitle } from 'styledComponents';
-// import CtaButton from 'components/CtaButton';
 import GridCol from 'components/GridCol';
 import GridRow from 'components/GridRow';
 import Tiles from 'components/Tiles';
