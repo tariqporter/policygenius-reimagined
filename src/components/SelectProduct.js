@@ -38,7 +38,7 @@ const SelectProduct = () => {
           selected={selectedProductId === product.id}
           onClick={() => setSelectedProductId(product.id)}
         >
-          <Text>{product.name}</Text>
+          <Text size="16">{product.name}</Text>
         </Product>
       ))}
     </Products>
