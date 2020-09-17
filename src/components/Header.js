@@ -5,22 +5,29 @@ import { Link } from 'react-router-dom';
 
 const HeaderStyle = styled.div`
   display: flex;
+  align-items: center;
   height: 80px;
   background-color: #221f20;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
 `;
 
 const HeaderLogo = styled(PgLogoBlack)`
-  margin: 20px 0 10px 20px;
+  margin-left: 30px;
   color: #fff;
 `;
 
 const Header = () => {
   return (
-    <HeaderStyle>
-      <Link to="/">
-        <HeaderLogo />
-      </Link>
-    </HeaderStyle>
+    <>
+      <HeaderStyle>
+        <Link to="/">
+          <HeaderLogo />
+        </Link>
+      </HeaderStyle>
+      <div style={{ height: 80 }} />
+    </>
   );
 };
 
