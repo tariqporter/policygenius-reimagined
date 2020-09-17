@@ -6,6 +6,7 @@ import GridCol from './GridCol';
 import GridRow from './GridRow';
 import { ChevronRight } from 'icons';
 import buildingSide from 'assets/building_side.png';
+import Step, { StepNumber } from './Step';
 
 const slideInRight = keyframes`
     from,
@@ -64,8 +65,15 @@ const ImageStyle = styled.img`
   max-height: 100%;
 `;
 
+const StepAbsolute = styled(Step)`
+  position: absolute;
+  ${({ top }) => `top: ${top}px;`}
+  ${({ left }) => `left: ${left}px;`}
+`;
+
 const Section2 = (props) => {
   const { ...other } = props;
+
   return (
     <SectionStyle {...other}>
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 0 0 30px', maxWidth: 'none' }}>
@@ -74,6 +82,27 @@ const Section2 = (props) => {
           <ImageBorder>
             <ImageStyle src={buildingSide} alt="Side of building" />
           </ImageBorder>
+          <StepAbsolute top={200} left={0}>
+            <StepNumber>1</StepNumber>
+            <div>
+              <Title size="20">Learn</Title>
+              <Text size="16">Unbiased expert advice from licensed non commissioned agents</Text>
+            </div>
+          </StepAbsolute>
+          <StepAbsolute top={350} left={100}>
+            <StepNumber>2</StepNumber>
+            <div>
+              <Title size="20">Compare Our Marketplace</Title>
+              <Text size="16">Unbiased expert advice from licensed non commissioned agents</Text>
+            </div>
+          </StepAbsolute>
+          <StepAbsolute top={500} left={200}>
+            <StepNumber>3</StepNumber>
+            <div>
+              <Title size="20">Apply Through Policygenius</Title>
+              <Text size="16">Apply through us and let our licensed advisors handle the rest. </Text>
+            </div>
+          </StepAbsolute>
           <SectionBg>
             <GridRow mobile tablet desktop>
               <GridCol mobile={2} tablet={5} desktop={5} />
