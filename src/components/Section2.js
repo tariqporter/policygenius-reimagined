@@ -46,7 +46,7 @@ const SectionStyle = styled.div`
 
 const SectionBg = styled.div`
   background: #ed772f;
-  padding-top: 30px;
+  padding-top: 100px;
   height: 100%;
 `;
 

@@ -12,7 +12,10 @@ const HeaderStyle = styled.div`
   align-items: center;
   height: 100px;
   background-color: #d84713;
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: 1000;
 `;
 
@@ -28,6 +31,14 @@ const NavLink = styled.div`
   cursor: pointer;
   color: #fff;
   padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const LogInButton = styled.div`
+  cursor: pointer;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,9 +79,9 @@ const Header = () => {
           ))}
         </NavSection>
         <CTASection>
-          <NavLink style={{ marginRight: 30 }}>
+          <LogInButton style={{ marginRight: 20 }}>
             <Title size="18">Log In</Title>
-          </NavLink>
+          </LogInButton>
           <CtaButton>
             <Title size="18" style={{ paddingRight: 10 }}>
               Get Started
