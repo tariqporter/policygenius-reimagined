@@ -52,6 +52,7 @@ const Tile = styled.div`
   padding: 12px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   animation: 1.25s ${skew};
+  border: 1px solid #ede8e5;
 
   ${({ top }) => `top: ${top}px;`}
   ${({ left }) => `left: ${left}px;`}

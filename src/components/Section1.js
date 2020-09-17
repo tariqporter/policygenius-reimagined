@@ -51,6 +51,7 @@ const ImageBorder = styled.div`
   padding: 40px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   animation: 1.25s ${slideInDown};
+  border: 1px solid #ede8e5;
 `;
 
 const ImageStyle = styled.img`

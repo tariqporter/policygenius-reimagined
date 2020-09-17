@@ -8,6 +8,8 @@ const StepStyle = styled.div`
   align-items: center;
   background: #fff;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
+  border: 1px solid #ede8e5;
+
   padding: 12px;
   width: 380px;
 `;
