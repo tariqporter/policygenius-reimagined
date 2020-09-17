@@ -12,16 +12,16 @@ const HeaderStyle = styled.div`
   align-items: center;
   height: 100px;
   background-color: #d84713;
-  position: absolute;
-  width: 100%;
+  position: relative;
   z-index: 1000;
 `;
 
 const NavSection = styled.div`
-  flex: 1;
   display: flex;
+  margin: 0 auto;
+  flex-grow: 3;
   justify-content: center;
-  margin-left: auto;
+  flex-basis: 0;
 `;
 
 const NavLink = styled.div`
@@ -34,25 +34,31 @@ const NavLink = styled.div`
 `;
 
 const HeaderLogo = styled(PgLogoBlack)`
-  margin-left: 64px;
   color: #fff;
-  margin-right: auto;
 `;
 
 const CTASection = styled.div`
-  flex: 1;
   display: flex;
-  justify-content: center;
-  margin-left: auto;
+  justify-content: flex-end;
+  flex-grow: 1;
+  flex-basis: 0;
+`;
+
+const LogoSection = styled.div`
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 0;
 `;
 
 const Header = () => {
   return (
     <>
-      <HeaderStyle>
-        <Link to="/">
-          <HeaderLogo />
-        </Link>
+      <HeaderStyle style={{ paddingRight: 64, paddingLeft: 64 }}>
+        <LogoSection>
+          <Link to="/">
+            <HeaderLogo />
+          </Link>
+        </LogoSection>
         <NavSection>
           {navLinks.map((navLink) => (
             <NavLink key={navLink.id}>
@@ -65,7 +71,7 @@ const Header = () => {
           <NavLink style={{ marginRight: 30 }}>
             <Title size="18">Log In</Title>
           </NavLink>
-          <CtaButton style={{ marginRight: 64 }}>
+          <CtaButton>
             <Title size="18" style={{ paddingRight: 10 }}>
               Get Started
             </Title>
@@ -73,7 +79,6 @@ const Header = () => {
           </CtaButton>
         </CTASection>
       </HeaderStyle>
-      <div style={{ height: 80 }} />
     </>
   );
 };
