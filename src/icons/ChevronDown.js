@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChevronRight = (props) => {
+const ChevronDown = (props) => {
   const { style, size = 1, ...other } = props;
   const mergedStyle = { width: size * 20, ...style };
 
@@ -11,7 +11,7 @@ const ChevronRight = (props) => {
           <polygon
             id="chevron_right"
             fill="currentColor"
-            transform="translate(6.000000, 3.000000) translate(-6.000000, -3.000000) "
+            transform="translate(6.000000, 3.000000) rotate(90.000000) translate(-6.000000, -3.000000) "
             points="4.13924051 -3 9 3 4.13924051 9 3 7.59375 6.72151899 3 3 -1.59375"
           />
         </g>
@@ -20,4 +20,4 @@ const ChevronRight = (props) => {
   );
 };
 
-export default ChevronRight;
+export default ChevronDown;
