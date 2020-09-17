@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useLayoutEffect, useRef, useState } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import { Title } from 'styledComponents';
 import womanCouch from 'assets/woman_on_couch.png';
 import womanWill from 'assets/woman_reading_will.png';
@@ -46,7 +46,15 @@ const Tile = styled.div`
   border: 1px solid #ede8e5;
   border-radius: 10px;
   margin: 20px;
-  animation: 1.25s ${slideInDown};
+  ${({ isVisible }) =>
+    isVisible
+      ? css`
+          animation: 1.25s ${slideInDown};
+        `
+      : `
+    opacity: 0;
+    transform: translateY(-100px);
+  `};
   ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
@@ -65,9 +73,28 @@ const ImageStyle = styled.img`
 `;
 
 const Tiles = (props) => {
+  const rootRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useLayoutEffect(() => {
+    const onScroll = (e) => {
+      const { height } = rootRef.current.getBoundingClientRect();
+      const offsetTop = rootRef.current.offsetTop;
+      const pageBottom = window.pageYOffset + window.innerHeight;
+      if (window.pageYOffset < offsetTop + height && isVisible) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(pageBottom > offsetTop);
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <TilesStyle>
-      <Tile delay={0}>
+    <TilesStyle ref={rootRef}>
+      <Tile delay={0} isVisible={isVisible}>
         <div>
           <ImageStyle src={womanCouch} alt="Woman on couch" />
         </div>
@@ -81,7 +108,7 @@ const Tiles = (props) => {
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.3} style={{ marginTop: '40px' }}>
+      <Tile delay={0.3} isVisible={isVisible} style={{ marginTop: '40px' }}>
         <div>
           <ImageStyle src={womanWill} alt="Woman reading will" />
         </div>
@@ -95,7 +122,7 @@ const Tiles = (props) => {
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.6} style={{ marginTop: '80px' }}>
+      <Tile delay={0.6} isVisible={isVisible} style={{ marginTop: '80px' }}>
         <div>
           <ImageStyle src={flower} alt="Flower" />
         </div>

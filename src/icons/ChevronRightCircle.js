@@ -7,7 +7,7 @@ const ChevronRightCircle = (props) => {
   return (
     <div style={mergedStyle} {...other}>
       <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+        <g fill="none" fillRule="evenodd" transform="translate(1 1)">
           <circle cx="9" cy="9" r="9" fill="#fff" stroke="currentColor" />
           <path
             fill="currentColor"
