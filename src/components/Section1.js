@@ -8,7 +8,7 @@ import { ChevronRight } from 'icons';
 import womanPool from 'assets/woman_by_pool.png';
 
 const SectionStyle = styled.div`
-  height: 100vh;
+  height: 504px;
   background: #d84713;
   margin-top: 100px;
   margin-bottom: 50px;
@@ -67,7 +67,7 @@ const Section1 = (props) => {
         <GridCol mobile={4} tablet={12} desktop={12}>
           <GridRow mobile tablet desktop>
             <GridCol mobile={2} tablet={5} desktop={5}>
-              <div style={{ paddingTop: '50px' }}>
+              <div style={{ paddingTop: '25px' }}>
                 <Title as="h1" size="64" color="#fff" style={{ marginTop: '50px' }}>
                   Financial protection all in one place
                 </Title>

@@ -42,6 +42,8 @@ const slideInRight = keyframes`
 
 const SectionStyle = styled.div`
   height: 615px;
+  margin-top: 150px;
+  margin-bottom: 50px;
 `;
 
 const SectionBg = styled.div`
@@ -52,8 +54,8 @@ const SectionBg = styled.div`
 
 const ImageBorder = styled.div`
   position: absolute;
-  top: 50px;
-  left: -100px;
+  top: 75px;
+  left: -200px;
   width: 545px;
   height: 471px;
   box-shadow: 10px 10px 25px 1px rgba(43, 39, 39, 0.25);
@@ -82,21 +84,21 @@ const Section2 = (props) => {
           <ImageBorder>
             <ImageStyle src={buildingSide} alt="Side of building" />
           </ImageBorder>
-          <StepAbsolute top={200} left={0}>
+          <StepAbsolute top={200} left={-100}>
             <StepNumber>1</StepNumber>
             <div>
               <Title size="20">Learn</Title>
               <Text size="16">Unbiased expert advice from licensed non commissioned agents</Text>
             </div>
           </StepAbsolute>
-          <StepAbsolute top={350} left={100}>
+          <StepAbsolute top={350} left={0}>
             <StepNumber>2</StepNumber>
             <div>
               <Title size="20">Compare Our Marketplace</Title>
               <Text size="16">Unbiased expert advice from licensed non commissioned agents</Text>
             </div>
           </StepAbsolute>
-          <StepAbsolute top={500} left={200}>
+          <StepAbsolute top={500} left={100}>
             <StepNumber>3</StepNumber>
             <div>
               <Title size="20">Apply Through Policygenius</Title>
@@ -104,22 +106,26 @@ const Section2 = (props) => {
             </div>
           </StepAbsolute>
           <SectionBg>
-            <GridRow mobile tablet desktop>
-              <GridCol mobile={2} tablet={5} desktop={5} />
+            <GridRow mobile tablet desktop={10}>
+              <GridCol mobile={2} tablet={5} desktop={4} />
               <GridCol mobile={2} tablet={5} desktop={5}>
-                <Title as="h1" size="64" color="#fff" style={{ margin: '12px 0' }}>
-                  Save time & money
-                </Title>
-                <Text as="h2" size="18" color="#fff" style={{ margin: '12px 0' }}>
-                  Unbiased expert advice to help you make decisions for you or your family that you can feel good about
-                </Text>
-                <CtaButton>
-                  <Title size="18" style={{ paddingRight: 10 }}>
-                    Get Started
+                <div style={{ paddingTop: '50px' }}>
+                  <Title as="h1" size="64" color="#fff">
+                    Save time & money
                   </Title>
-                  <ChevronRight />
-                </CtaButton>
+                  <Text as="h2" size="18" color="#fff" style={{ margin: '30px 0' }}>
+                    Unbiased expert advice to help you make decisions for you or your family that you can feel good
+                    about
+                  </Text>
+                  <CtaButton>
+                    <Title size="18" style={{ paddingRight: 10 }}>
+                      Get Started
+                    </Title>
+                    <ChevronRight />
+                  </CtaButton>
+                </div>
               </GridCol>
+              <GridCol mobile={2} tablet={5} desktop={1} />
             </GridRow>
           </SectionBg>
         </GridCol>
