@@ -7,7 +7,7 @@ export const Title = styled.div`
   font-weight: 700;
   margin: 0;
   letter-spacing: 0.7px;
-  line-height: 59px;
+  line-height: ${(props) => `${1 * props.size}px`};
   font-size: ${(props) => `${props.size}px`};
 `;
 
@@ -17,7 +17,7 @@ export const Text = styled.div`
   font-weight: 400;
   margin: 0;
   letter-spacing: 0.1px;
-  line-height: 28px;
+  line-height: ${(props) => `${1.5 * props.size}px`};
   font-size: ${(props) => `${props.size}px`};
 `;
 
