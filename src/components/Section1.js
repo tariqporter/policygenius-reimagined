@@ -5,7 +5,7 @@ import CtaButton from './CtaButton';
 import GridCol from './GridCol';
 import GridRow from './GridRow';
 import { ChevronRight } from 'icons';
-import womanPool from 'assets/woman_pool.png';
+import womanPool from 'assets/woman_by_pool.png';
 
 const SectionStyle = styled.div`
   height: 545px;
