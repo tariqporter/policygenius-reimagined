@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import { ChevronDown, PgLogoBlack } from 'icons';
 import { Link } from 'react-router-dom';
@@ -10,8 +10,9 @@ import { ChevronRight } from 'icons';
 const HeaderStyle = styled.div`
   display: flex;
   align-items: center;
-  height: 100px;
-  background-color: #d84713;
+  height: 96px;
+  transition: background-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: ${({ isScrolling }) => (isScrolling ? '#000' : '#d84713')};
   position: fixed;
   top: 0;
   right: 0;
@@ -62,9 +63,23 @@ const LogoSection = styled.div`
 `;
 
 const Header = () => {
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useLayoutEffect(() => {
+    const onScroll = (e) => {
+      if (window.pageYOffset === 0) {
+        setIsScrolling(false);
+      } else {
+        setIsScrolling(true);
+      }
+    };
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <>
-      <HeaderStyle style={{ paddingRight: 64, paddingLeft: 64 }}>
+      <HeaderStyle isScrolling={isScrolling} style={{ paddingRight: 132, paddingLeft: 132 }}>
         <LogoSection>
           <Link to="/">
             <HeaderLogo />
@@ -73,17 +88,17 @@ const Header = () => {
         <NavSection>
           {navLinks.map((navLink) => (
             <NavLink key={navLink.id}>
-              <Title size="18">{navLink.name}</Title>
+              <Title size="15">{navLink.name}</Title>
               {navLink.children && <ChevronDown style={{ marginLeft: 10, width: 14, height: 20 }} />}
             </NavLink>
           ))}
         </NavSection>
         <CTASection>
           <LogInButton style={{ marginRight: 20 }}>
-            <Title size="18">Log In</Title>
+            <Title size="15">Log In</Title>
           </LogInButton>
-          <CtaButton>
-            <Title size="18" style={{ paddingRight: 10 }}>
+          <CtaButton style={{ backgroundColor: isScrolling && '#d84713' }}>
+            <Title size="15" style={{ paddingRight: 3 }}>
               Get Started
             </Title>
             <ChevronRight />

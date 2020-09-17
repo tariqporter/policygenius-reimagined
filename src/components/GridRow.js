@@ -51,7 +51,7 @@ const GridRow = styled.div`
   @media ${DESKTOP_MEDIA_QUERY} {
     grid-template-columns: repeat(12, minmax(53px, 1fr));
     grid-column-gap: 24px;
-    max-width: 1152px;
+    max-width: 1080px;
     min-width: 900px;
     margin-right: 64px;
     margin-left: 64px;

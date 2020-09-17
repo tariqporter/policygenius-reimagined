@@ -10,7 +10,7 @@ import womanPool from 'assets/woman_by_pool.png';
 const SectionStyle = styled.div`
   height: 80vh;
   background: #d84713;
-  margin-top: 100px;
+  margin-top: 68px;
   margin-bottom: 50px;
 `;
 
@@ -76,7 +76,7 @@ const Section1 = (props) => {
                   Unbiased expert advice to help you make decisions for you or your family that you can feel good about
                 </Subtitle>
                 <CtaButton>
-                  <Title size="18" style={{ paddingRight: 10 }}>
+                  <Title size="15" style={{ paddingRight: 3 }}>
                     Get Started
                   </Title>
                   <ChevronRight />
