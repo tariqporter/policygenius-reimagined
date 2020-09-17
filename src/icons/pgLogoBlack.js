@@ -7,8 +7,8 @@ const PgLogoBlack = (props) => {
   return (
     <div style={mergedStyle} {...other}>
       <svg viewBox="3 0 1038 186" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g id="PG-Logos" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="Policygenius-/-Black" fill-rule="nonzero" fill="currentColor">
+        <g id="PG-Logos" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+          <g id="Policygenius-/-Black" fillRule="nonzero" fill="currentColor">
             <g id="PG.Logo.RGB.Black">
               <path
                 d="M264,19.1 C264,11.7 269.9,5.5 277.4,5.5 C285,5.5 291,11.7 291,19.1 C291,26.5 285.1,32.7 277.4,32.7 C269.9,32.7 264,26.5 264,19.1"
