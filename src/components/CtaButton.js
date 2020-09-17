@@ -29,7 +29,7 @@ const CtaStyle = styled.button`
     transform: translate3d(-275px, -275px, 0);
     width: 300px;
     height: 300px;
-    background-color: #818181;
+    background-color: #fff;
     border-radius: 50%;
   }
 `;
