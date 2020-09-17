@@ -50,7 +50,7 @@ const Tile = styled.div`
   position: absolute;
   background: #fff;
   padding: 12px;
-  box-shadow: 10px 10px 25px 1px rgba(43, 39, 39, 0.25);
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   animation: 1.25s ${skew};
 
   ${({ top }) => `top: ${top}px;`}
@@ -67,7 +67,7 @@ const Section3 = (props) => {
           <SectionBg>
             <GridRow mobile tablet desktop={10}>
               <GridCol mobile={1} tablet={5} desktop={1} />
-              <GridCol mobile={2} tablet={5} desktop={6}>
+              <GridCol mobile={2} tablet={5} desktop={6} style={{ paddingTop: '150px' }}>
                 <Title as="h1" size="64" color="#fff">
                   Not your average broker
                 </Title>
@@ -86,7 +86,7 @@ const Section3 = (props) => {
             </GridRow>
           </SectionBg>
         </GridCol>
-        <GridCol mobile={1} tablet={2} desktop={2}>
+        <GridCol mobile={1} tablet={2} desktop={2} style={{ paddingTop: '50px' }}>
           <Tiles>
             <Tile top={0} left={0}>
               <LifeTile size={6} />

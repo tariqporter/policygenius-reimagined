@@ -49,7 +49,7 @@ const slideInDown = keyframes`
 const ImageBorder = styled.div`
   background: #fff;
   padding: 40px;
-  box-shadow: 10px 10px 25px 1px rgba(43, 39, 39, 0.25);
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   animation: 1.25s ${slideInDown};
 `;
 

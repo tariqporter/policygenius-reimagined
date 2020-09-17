@@ -42,7 +42,9 @@ const Tile = styled.div`
   flex-direction: column;
   width: 368px;
   height: 400px;
-  box-shadow: 2px 2px 10px 1px rgba(43, 39, 39, 0.25);
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.08);
+  border: 1px solid #ede8e5;
+  border-radius: 10px;
   margin: 20px;
   animation: 1.25s ${slideInDown};
   ${({ delay }) => `animation-delay: ${delay}s;`}
@@ -59,6 +61,7 @@ const TileContent = styled.div`
 const ImageStyle = styled.img`
   max-width: 100%;
   max-height: 100%;
+  border-radius: 10px;
 `;
 
 const Tiles = (props) => {
@@ -69,34 +72,40 @@ const Tiles = (props) => {
           <ImageStyle src={womanCouch} alt="Woman on couch" />
         </div>
         <TileContent>
-          <Title size="12" color="#808080">
+          <Title size="12" color="#2B2727" style={{ paddingTop: '35px', paddingBottom: '10px', letterSpacing: '2px' }}>
             PG INSURANCE
           </Title>
-          <Title size="30">Life Insurance Guide</Title>
+          <Title size="24" color="#D84713">
+            Life Insurance Guide
+          </Title>
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.3}>
+      <Tile delay={0.3} style={{ marginTop: '40px' }}>
         <div>
           <ImageStyle src={womanWill} alt="Woman reading will" />
         </div>
         <TileContent>
-          <Title size="12" color="#808080">
+          <Title size="12" color="#2B2727" style={{ paddingTop: '35px', paddingBottom: '10px', letterSpacing: '2px' }}>
             PG WILLS & TRUSTS
           </Title>
-          <Title size="30">Starting a Will or Trust</Title>
+          <Title size="24" color="#D84713">
+            Starting a Will or Trust
+          </Title>
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.6}>
+      <Tile delay={0.6} style={{ marginTop: '80px' }}>
         <div>
           <ImageStyle src={flower} alt="Flower" />
         </div>
         <TileContent>
-          <Title size="12" color="#808080">
+          <Title size="12" color="#2B2727" style={{ paddingTop: '35px', paddingBottom: '10px', letterSpacing: '2px' }}>
             PG FINANCE
           </Title>
-          <Title size="30">Easy Money Newsletter</Title>
+          <Title size="24" color="#D84713">
+            Easy Money Newsletter
+          </Title>
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>

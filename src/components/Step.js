@@ -7,7 +7,7 @@ const StepStyle = styled.div`
   justify-content: center;
   align-items: center;
   background: #fff;
-  box-shadow: 10px 10px 25px 1px rgba(43, 39, 39, 0.25);
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   padding: 12px;
   width: 380px;
 `;
