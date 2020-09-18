@@ -6,6 +6,7 @@ import Section4 from 'components/Section4';
 import Section5 from 'components/Section5';
 import Section6 from 'components/Section6';
 import Section7 from 'components/Section7';
+import Footer from 'components/Footer';
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Section5 style={{ marginBottom: 100 }} />
       <Section6 style={{ marginBottom: 100 }} />
       <Section7 style={{ marginBottom: 100 }} />
+      <Footer />
     </div>
   );
 };
