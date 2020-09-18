@@ -11,6 +11,7 @@ const HeaderStyle = styled.div`
   display: flex;
   align-items: center;
   height: 80px;
+  overflow-x: hidden;
   transition: background-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
   background-color: ${({ isScrolling }) => (isScrolling ? '#000' : '#d84713')};
   position: fixed;
@@ -31,7 +32,7 @@ const NavSection = styled.div`
 const NavLink = styled.div`
   cursor: pointer;
   color: #fff;
-  padding: 0 30px;
+  padding: 0 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,7 +80,7 @@ const Header = () => {
 
   return (
     <>
-      <HeaderStyle isScrolling={isScrolling} style={{ paddingRight: 132, paddingLeft: 132 }}>
+      <HeaderStyle isScrolling={isScrolling} style={{ paddingRight: 64, paddingLeft: 64 }}>
         <LogoSection>
           <Link to="/">
             <HeaderLogo />
@@ -89,7 +90,7 @@ const Header = () => {
           {navLinks.map((navLink) => (
             <NavLink key={navLink.id}>
               <Title size="15">{navLink.name}</Title>
-              {navLink.children && <ChevronDown style={{ marginLeft: 10, width: 14, height: 20 }} />}
+              {navLink.children && <ChevronDown style={{ marginLeft: 5, width: 14, height: 20 }} />}
             </NavLink>
           ))}
         </NavSection>
