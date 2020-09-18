@@ -6,7 +6,7 @@ import GridCol from './GridCol';
 import GridRow from './GridRow';
 import { ChevronRight } from 'icons';
 import womanPool from 'assets/woman_by_pool.png';
-import Quotes from 'assets/Quotes.svg';
+import Quotes from 'assets/Quotes.png';
 
 const SectionStyle = styled.div`
   height: 80vh;
@@ -49,7 +49,7 @@ const slideInDown = keyframes`
 
 const QuoteImageBorder = styled.div`
   position: absolute;
-  background: rgba(246, 249, 252, 0.3);
+  background: rgba(246, 249, 252, 0.5);
   height: 600px;
   box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.1), 0 50px 100px -20px rgba(50, 50, 93, 0.25),
     0 30px 60px -30px rgba(0, 0, 0, 0.3);
@@ -61,6 +61,8 @@ const ImageBorder = styled.div`
   position: absolute;
   background: #fff;
   padding: 40px;
+  width: 450px;
+  height: 300px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   animation: 1.25s ${slideInDown};
   border: 1px solid #ede8e5;
@@ -79,7 +81,7 @@ const Section1 = (props) => {
       <QuoteImageBorder style={{ top: 120, right: -350, overflow: 'hidden' }}>
         <ImageStyle src={Quotes} alt="Quote mockup" />
       </QuoteImageBorder>
-      <ImageBorder style={{ top: 550, right: 400, overflow: 'hidden' }}>
+      <ImageBorder style={{ top: 500, right: 500, overflow: 'hidden' }}>
         <ImageStyle src={womanPool} alt="Woman by Pool" />
       </ImageBorder>
       <GridRow mobile tablet desktop>
