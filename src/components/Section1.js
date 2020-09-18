@@ -67,7 +67,9 @@ const ImageBorder = styled.div`
 `;
 
 const ImageStyle = styled.img`
-  max-width: 100%;
+  width: 450px;
+  object-fit: cover;
+  object-position: top;
   max-height: 100%;
   animation: 1.25s ${slideInDown};
 `;
