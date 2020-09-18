@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Title, Subtitle } from 'styledComponents';
-import CtaButton from './CtaButton';
-import GridCol from './GridCol';
-import GridRow from './GridRow';
+import CtaButton from 'components/CtaButton';
+import GridCol from 'components/GridCol';
+import GridRow from 'components/GridRow';
 import { ChevronRight } from 'icons';
 import buildingSide from 'assets/building_side.png';
-import Step, { StepNumber } from './Step';
+import Step, { StepNumber } from 'components/Step';
 import useIsVisible from 'hooks/useIsVisible';
 
 const slideInRight = keyframes`
