@@ -9,7 +9,7 @@ import womanPool from 'assets/woman_by_pool.png';
 import Quotes from 'assets/Quotes.png';
 
 const SectionStyle = styled.div`
-  height: 80vh;
+  height: 504px;
   background: #d84713;
   margin-top: 80px;
   margin-bottom: 50px;
@@ -93,12 +93,7 @@ const Section1 = (props) => {
       <GridRow mobile tablet desktop>
         <GridCol mobile={4} tablet={12} desktop={12}>
           <GridRow mobile tablet desktop>
-            <GridCol
-              mobile={2}
-              tablet={5}
-              desktop={7}
-              style={{ display: 'grid', height: '80vh', alignItems: 'center' }}
-            >
+            <GridCol mobile={2} tablet={5} desktop={7} style={{ display: 'grid', alignItems: 'center' }}>
               <div style={{ paddingBottom: '40px' }}>
                 <Title as="h1" size="72" color="#fff">
                   Financial protection all in one place
