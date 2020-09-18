@@ -74,13 +74,22 @@ const Header = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [vertical, setVertical] = useState(false);
   const toggleVertical = (value) => {
-    if (!value?.children) setVertical(null);
-    else setVertical(value);
+    if (!value?.children) {
+      setVertical(null);
+      setIsScrolling(false);
+    } else {
+      setVertical(value);
+      setIsScrolling(true);
+    }
   };
 
   useEffect(() => {
     const onScroll = () => {
-      setIsScrolling(window.pageYOffset === 0);
+      if (window.pageYOffset) {
+        setIsScrolling(true);
+      } else {
+        setIsScrolling(false);
+      }
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -98,8 +107,13 @@ const Header = () => {
           {navLinks.map((navLink) => (
             <NavLink
               key={navLink.id}
-              onMouseEnter={() => toggleVertical(navLink)}
-              onMouseLeave={() => toggleVertical(null)}
+              onMouseEnter={() => {
+                toggleVertical(navLink);
+              }}
+              onMouseLeave={() => {
+                toggleVertical(null);
+                setIsScrolling(false);
+              }}
             >
               <Title size="15">{navLink.name}</Title>
               {navLink.children && <ChevronDown style={{ marginLeft: 5, width: 14, height: 20 }} />}
