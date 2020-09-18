@@ -4,7 +4,7 @@ import { Subtitle, Title } from 'styledComponents';
 import CtaButton from 'components/CtaButton';
 import GridCol from 'components/GridCol';
 import GridRow from 'components/GridRow';
-import { ChevronRight, Testimonial1, PgCircles, Testimonial2, QuotesCircles } from 'icons';
+import { ChevronRight, Testimonial1, Testimonial2, QuotesCircles } from 'icons';
 import Testimonials from 'assets/Testimonials.png';
 
 const SectionStyle = styled.div`
@@ -70,27 +70,6 @@ const Section3 = (props) => {
         </GridCol>
         <GridCol mobile={1} tablet={2} desktop={3} style={{ paddingTop: '50px', paddingLeft: '50px' }}></GridCol>
       </GridRow>
-      {/* <GridRow desktop style={{ marginTop: 350, maxWidth: 'none' }}>
-        <GridCol desktop={3}></GridCol>
-        <GridCol desktop={4}>
-          <Testimonial1 />
-        </GridCol>
-        <GridCol desktop={2} style={{ paddingTop: 100 }}>
-          <PgCircles />
-        </GridCol>
-        <GridCol desktop={3}></GridCol>
-      </GridRow>
-      <GridRow desktop style={{ marginTop: 50, maxWidth: 'none' }}>
-        <GridCol desktop={3}></GridCol>
-        <GridCol desktop={2} style={{ paddingTop: 100 }}>
-          <QuotesCircles />
-        </GridCol>
-        <GridCol desktop={1}></GridCol>
-        <GridCol desktop={5} style={{ display: 'grid', alignItems: 'center' }}>
-          <Testimonial2 />
-        </GridCol>
-        <GridCol desktop={1}></GridCol>
-      </GridRow> */}
     </SectionStyle>
   );
 };
