@@ -32,7 +32,6 @@ const slideInRight = keyframes`
     }
   
     60% {
-      opacity: 1;
       transform: translateX(-2%);
     }
   
@@ -45,6 +44,7 @@ const slideInRight = keyframes`
     }
   
     to {
+      opacity: 1;
       transform: translateX(0);
     }
 `;
@@ -97,7 +97,7 @@ const ImageBorder = styled.div`
   ${({ isVisible }) =>
     isVisible &&
     css`
-      animation: 1.25s ${slideInRight} backwards;
+      animation: 2s ${slideInRight} backwards;
     `};
 `;
 
@@ -110,7 +110,7 @@ const ImageStyle = styled.img`
   ${({ isVisible }) =>
     isVisible &&
     css`
-      animation: 1.25s ${slideInRight} backwards;
+      animation: 2s ${slideInRight} backwards;
     `};
 `;
 
