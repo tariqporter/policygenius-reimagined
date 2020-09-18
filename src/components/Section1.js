@@ -121,18 +121,16 @@ const QuoteImageStyle = styled.img`
 
 const Section1 = (props) => {
   const { ...other } = props;
-  const quoteRef = useRef(null);
-  const imageRef = useRef(null);
-  const quoteVisible = useIsVisible(quoteRef);
-  const imageVisible = useIsVisible(imageRef);
+  const rootRef = useRef(null);
+  const isVisible = useIsVisible(rootRef);
 
   return (
-    <SectionStyle {...other}>
-      <QuoteImageBorder style={{ top: 120, right: -350, overflow: 'hidden' }} ref={quoteRef} isVisible={quoteVisible}>
+    <SectionStyle {...other} ref={rootRef}>
+      <QuoteImageBorder style={{ top: 120, right: -350, overflow: 'hidden' }} isVisible={isVisible}>
         <QuoteImageStyle src={Quotes} alt="Quote mockup" style={{ zIndex: '1000' }} />
       </QuoteImageBorder>
-      <ImageBorder style={{ top: 500, right: 500, overflow: 'hidden' }} ref={imageRef} isVisible={imageVisible}>
-        <ImageStyle src={womanPool} alt="Woman by Pool" isVisible={imageVisible} />
+      <ImageBorder style={{ top: 500, right: 500, overflow: 'hidden' }} isVisible={isVisible}>
+        <ImageStyle src={womanPool} alt="Woman by Pool" isVisible={isVisible} />
       </ImageBorder>
       <GridRow mobile tablet desktop>
         <GridCol mobile={4} tablet={12} desktop={12}>
