@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CtaStyle = styled.button`
-  padding: 12px;
-  width: 172px;
-  height: 64px;
+  width: auto;
+  height: 45px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -13,11 +12,16 @@ const CtaStyle = styled.button`
   outline: none;
   position: relative;
   background-color: #000;
+  transition: background-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: #fff;
   overflow: hidden;
 
   &:hover {
     color: #000;
+    path {
+      fill: #000;
+      stroke: #000;
+    }
   }
 
   &:hover:before {
@@ -42,6 +46,7 @@ const CtaChild = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 `;
 
 const CtaButton = (props) => {

@@ -124,7 +124,7 @@ const Section2 = (props) => {
                     about
                   </Subtitle>
                   <CtaButton>
-                    <Title size="18" style={{ paddingRight: 10 }}>
+                    <Title size="15" style={{ paddingRight: 3 }}>
                       Get Started
                     </Title>
                     <ChevronRight />
