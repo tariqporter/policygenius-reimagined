@@ -17,7 +17,7 @@ const SectionStyle = styled.div`
   overflow: hidden;
 `;
 
-const slideInDown = keyframes`
+const slideInRight = keyframes`
     from,
     60%,
     75%,
@@ -28,24 +28,24 @@ const slideInDown = keyframes`
   
     0% {
       opacity: 0;
-      transform: translateY(-200px);
+      transform: translateX(-200px);
     }
   
     60% {
       opacity: 1;
-      transform: translateY(25px);
+      transform: translateX(25px);
     }
   
     75% {
-      transform: translateY(-10px);
+      transform: translateX(-10px);
     }
   
     90% {
-      transform: translateY(5px);
+      transform: translateX(5px);
     }
   
     to {
-      transform: translateY(0);
+      transform: translateX(0);
     }
 `;
 const skew = keyframes`
@@ -97,7 +97,7 @@ const ImageBorder = styled.div`
   ${({ isVisible }) =>
     isVisible &&
     css`
-      animation: 1.25s ${slideInDown} backwards;
+      animation: 1.25s ${slideInRight} backwards;
     `};
 `;
 
@@ -110,7 +110,7 @@ const ImageStyle = styled.img`
   ${({ isVisible }) =>
     isVisible &&
     css`
-      animation: 1.25s ${slideInDown} backwards;
+      animation: 1.25s ${slideInRight} backwards;
     `};
 `;
 
