@@ -1,4 +1,5 @@
 import { useState, useLayoutEffect, useEffect } from 'react';
+import throttle from 'lodash/throttle';
 
 const useIsVisible = (r) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,8 +14,10 @@ const useIsVisible = (r) => {
       const rect = ref.current.getBoundingClientRect();
       setIsVisible(rect.top <= windowBottom && rect.bottom >= 0);
     };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    onScroll();
+    const debouncedOnScroll = throttle(onScroll, 250);
+    window.addEventListener('scroll', debouncedOnScroll);
+    return () => window.removeEventListener('scroll', debouncedOnScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
