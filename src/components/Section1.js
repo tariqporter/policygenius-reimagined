@@ -9,7 +9,7 @@ import womanPool from 'assets/woman_by_pool.png';
 import Quotes from 'assets/Quotes.png';
 
 const SectionStyle = styled.div`
-  height: 80vh;
+  height: 504px;
   background: #d84713;
   margin-top: 80px;
   margin-bottom: 50px;
