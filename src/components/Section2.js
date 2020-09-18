@@ -42,7 +42,7 @@ const slideInRight = keyframes`
 `;
 
 const SectionStyle = styled.div`
-  height: 615px;
+  height: 500px;
   margin-top: 150px;
   margin-bottom: 50px;
 `;
