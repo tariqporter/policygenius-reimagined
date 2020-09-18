@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const CtaStyle = styled.button`
   width: auto;
@@ -53,9 +54,11 @@ const CtaButton = (props) => {
   const { children, ...other } = props;
 
   return (
-    <CtaStyle type="button" {...other}>
-      <CtaChild>{children}</CtaChild>
-    </CtaStyle>
+    <Link to="/products">
+      <CtaStyle type="button" {...other}>
+        <CtaChild>{children}</CtaChild>
+      </CtaStyle>
+    </Link>
   );
 };
 
