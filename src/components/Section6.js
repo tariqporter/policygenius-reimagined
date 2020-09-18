@@ -35,12 +35,12 @@ const Section3 = (props) => {
 
   return (
     <SectionStyle {...other} style={{ position: 'relative' }}>
-      <WindowBorder style={{ top: 100, left: 500, overflow: 'hidden' }}>
+      <WindowBorder style={{ top: 100, right: 850, overflow: 'hidden' }}>
         <ImageStyle src={Testimonials} alt="window" />
       </WindowBorder>
       <Testimonial1 style={{ position: 'absolute', zIndex: 999, top: 50, right: 625 }} />
-      <Testimonial2 style={{ position: 'absolute', zIndex: 999, top: 375, right: 750 }} />
-      <QuotesCircles style={{ position: 'absolute', zIndex: 999, top: 450, right: 250 }} />
+      <Testimonial2 style={{ position: 'absolute', zIndex: 999, top: 375, right: 800 }} />
+      <QuotesCircles style={{ position: 'absolute', zIndex: 999, top: 450, right: 350 }} />
 
       <svg width="1310" height="615" style={{ position: 'absolute', top: 300, right: 0 }}>
         <rect width="1310" height="615" style={{ fill: '#F2E5CE' }} />
