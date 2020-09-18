@@ -48,10 +48,10 @@ const Section3 = (props) => {
 
   return (
     <SectionStyle {...other} style={{ position: 'relative' }}>
-      <WindowBorder style={{ top: 50, right: 100, overflow: 'hidden' }}>
+      <WindowBorder style={{ top: 50, left: 1200, overflow: 'hidden' }}>
         <ImageStyle src={window} alt="window" />
       </WindowBorder>
-      <QuestionsBorder style={{ top: 125, left: -50, overflow: 'hidden' }}>
+      <QuestionsBorder style={{ top: 125, left: 0, overflow: 'hidden' }}>
         <ImageStyle src={Questions} alt="Questions mockup" />
       </QuestionsBorder>
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 30px 0 0', maxWidth: 'none' }}>
