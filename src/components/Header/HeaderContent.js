@@ -161,7 +161,10 @@ const ProductVerticalLeft = (props) => {
 
   return (
     <GridRow>
-      <GridCol desktop={4} style={{ marginTop: 40, marginBottom: 60, borderRight: '0.5px solid #fff' }}>
+      <GridCol
+        desktop={4}
+        style={{ marginTop: 40, marginBottom: 60, marginRight: 40, borderRight: '0.5px solid #fff' }}
+      >
         <WhiteTitle size="24" style={{ marginBottom: 8 }}>
           Insurance
           <hr align="left" />
