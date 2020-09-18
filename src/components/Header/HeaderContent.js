@@ -44,7 +44,7 @@ const WhiteLink = styled(Subtitle)`
   color: #fff;
   text-decoration: none;
   display: block;
-  margin: 10px 0;
+  margin: 18px 0;
 `;
 
 const ImageStyle = styled.img`
