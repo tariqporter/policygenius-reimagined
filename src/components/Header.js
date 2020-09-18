@@ -79,12 +79,7 @@ const Header = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      // setIsScrolling(window.pageYOffset === 0);
-      if (window.pageYOffset === 0) {
-        setIsScrolling(false);
-      } else {
-        setIsScrolling(true);
-      }
+      setIsScrolling(window.pageYOffset === 0);
     };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);

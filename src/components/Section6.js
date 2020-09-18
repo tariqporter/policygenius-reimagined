@@ -38,7 +38,7 @@ const Section3 = (props) => {
       <WindowBorder style={{ top: 100, left: 500, overflow: 'hidden' }}>
         <ImageStyle src={Testimonials} alt="window" />
       </WindowBorder>
-      <Testimonial1 style={{ position: 'absolute', zIndex: 999, top: 50, right: 500 }} />
+      <Testimonial1 style={{ position: 'absolute', zIndex: 999, top: 50, right: 625 }} />
       <Testimonial2 style={{ position: 'absolute', zIndex: 999, top: 375, right: 750 }} />
       <QuotesCircles style={{ position: 'absolute', zIndex: 999, top: 450, right: 250 }} />
 
