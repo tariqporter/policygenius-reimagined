@@ -12,7 +12,7 @@ const useIsVisible = (r) => {
     const onScroll = (e) => {
       const windowBottom = window.innerHeight || document.documentElement.clientHeight;
       const rect = ref.current.getBoundingClientRect();
-      setIsVisible(rect.top <= windowBottom && rect.bottom >= 0);
+      setIsVisible(rect.top + 200 <= windowBottom && rect.bottom >= 0);
     };
     onScroll();
     const debouncedOnScroll = throttle(onScroll, 250);

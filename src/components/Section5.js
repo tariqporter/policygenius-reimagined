@@ -70,7 +70,7 @@ const slideInDown = keyframes`
 
 const SectionStyle = styled.div`
   height: 750px;
-  margin-top: 200px;
+  margin-top: 300px;
   margin-bottom: 50px;
 `;
 
@@ -88,12 +88,14 @@ const ImageBorder = styled.div`
   width: 400px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   border: 1px solid #ede8e5;
-
+  opacity: 0;
   ${({ isVisible }) =>
     isVisible &&
     css`
+      opacity: 1;
       animation: 2s ${slideInRight} backwards;
     `};
+  ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
 const ImageStyle = styled.img`
@@ -106,12 +108,16 @@ const PhoneImageBorder = styled.div`
   height: 700px;
   border-radius: 5px;
   z-index: 999;
+  opacity: 0;
 
   ${({ isVisible }) =>
     isVisible &&
     css`
+      opacity: 1;
+
       animation: 2s ${slideInDown} backwards;
     `};
+  ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
 const Section5 = (props) => {
@@ -121,12 +127,12 @@ const Section5 = (props) => {
 
   return (
     <SectionStyle {...other} style={{ position: 'relative' }} ref={rootRef}>
-      <PhoneImageBorder style={{ top: 50, left: 650, overflow: 'hidden' }} isVisible={isVisible}>
+      <PhoneImageBorder delay={0.1} style={{ top: 50, left: 650, overflow: 'hidden' }} isVisible={isVisible}>
         <ImageStyle src={PhoneMockup} alt="Quote mockup" />
       </PhoneImageBorder>
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 0 0 30px', maxWidth: 'none' }}>
         <GridCol mobile={1} tablet={2} desktop={2} style={{ position: 'relative' }}>
-          <ImageBorder isVisible={isVisible}>
+          <ImageBorder delay={0.3} isVisible={isVisible}>
             <ImageStyle src={pool} alt="Side of building" />
           </ImageBorder>
         </GridCol>

@@ -84,12 +84,16 @@ const ImageBorder = styled.div`
   width: 545px;
   height: 471px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
-
+  opacity: 0;
   ${({ isVisible }) =>
     isVisible &&
     css`
+      opacity: 1;
+
       animation: 1.25s ${slideInRight} backwards;
     `};
+
+  ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
 const ImageStyle = styled.img`
@@ -101,10 +105,11 @@ const StepAbsolute = styled(Step)`
   position: absolute;
   ${({ top }) => `top: ${top}px;`}
   ${({ left }) => `left: ${left}px;`}
-
+    opacity: 0;
   ${({ isVisible }) =>
     isVisible &&
     css`
+      opacity: 1;
       animation: 1.25s ${skew} backwards;
     `};
 
@@ -121,10 +126,10 @@ const Section2 = (props) => {
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 0 0 30px', maxWidth: 'none' }}>
         <GridCol mobile={1} tablet={2} desktop={2}></GridCol>
         <GridCol mobile={3} tablet={10} desktop={10} style={{ position: 'relative' }}>
-          <ImageBorder isVisible={isVisible}>
+          <ImageBorder isVisible={isVisible} delay={0.2}>
             <ImageStyle src={buildingSide} alt="Side of building" />
           </ImageBorder>
-          <StepAbsolute top={200} left={-100} isVisible={isVisible} delay={0}>
+          <StepAbsolute top={200} left={-100} isVisible={isVisible} delay={0.4}>
             <StepNumber>1</StepNumber>
             <div>
               <Title size="19">Learn</Title>
@@ -133,7 +138,7 @@ const Section2 = (props) => {
               </Subtitle>
             </div>
           </StepAbsolute>
-          <StepAbsolute top={350} left={0} isVisible={isVisible} delay={0.2}>
+          <StepAbsolute top={350} left={0} isVisible={isVisible} delay={0.6}>
             <StepNumber>2</StepNumber>
             <div>
               <Title size="19">Compare Our Marketplace</Title>
@@ -142,7 +147,7 @@ const Section2 = (props) => {
               </Subtitle>
             </div>
           </StepAbsolute>
-          <StepAbsolute top={500} left={100} isVisible={isVisible} delay={0.4}>
+          <StepAbsolute top={500} left={100} isVisible={isVisible} delay={0.8}>
             <StepNumber>3</StepNumber>
             <div>
               <Title size="19">Apply Through Policygenius</Title>
