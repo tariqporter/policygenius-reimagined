@@ -4,7 +4,7 @@ import { ChevronDown, PgLogoBlack } from 'icons';
 import { Link } from 'react-router-dom';
 import navLinks from 'data/navLinks';
 import { Title } from 'styledComponents';
-import CtaButton from './CtaButton';
+import CtaButton from '../CtaButton';
 import { ChevronRight } from 'icons';
 import HeaderDropdown from './HeaderDropdown';
 
@@ -74,7 +74,8 @@ const Header = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [vertical, setVertical] = useState(false);
   const toggleVertical = (value) => {
-    setVertical(value);
+    if (!value?.children) setVertical(null);
+    else setVertical(value);
   };
 
   useEffect(() => {

@@ -20,15 +20,16 @@ const HeaderDropdownStyle = styled.div`
       : `
     opacity: 0;
     height: 0;
-`}//   opacity: 1;
-//   height: 450px;
+`}
+  opacity: 1;
+  height: 450px;
 `;
 
 const Backdrop = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.3;
+  opacity: 0.5;
   background-color: #000;
   width: 100%;
   height: 100%;
