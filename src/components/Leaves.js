@@ -39,15 +39,18 @@ const Leaf = styled.div`
   background: #fff;
   padding: 12px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
+  opacity: 0;
 
   ${({ isVisible }) =>
     isVisible &&
     css`
+      opacity: 1;
       animation: 1.25s ${skew} backwards;
     `};
 
   ${({ top }) => `top: ${top}px;`}
   ${({ left }) => `left: ${left}px;`}
+  animation-delay: 0.6s;
 `;
 
 const Leaves = () => {

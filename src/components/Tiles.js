@@ -47,9 +47,11 @@ const Tile = styled.div`
   border: 1px solid #ede8e5;
   border-radius: 10px;
   margin: 20px;
+  opacity: 0;
   ${({ isVisible }) =>
     isVisible &&
     css`
+      opacity: 1;
       animation: 1.25s ${slideInDown} backwards;
     `};
   ${({ delay }) => `animation-delay: ${delay}s;`}

@@ -84,6 +84,7 @@ const QuoteImageBorder = styled.div`
     css`
       animation: 1.25s ${skew} backwards;
     `};
+  ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
 const ImageBorder = styled.div`
@@ -100,6 +101,7 @@ const ImageBorder = styled.div`
     css`
       animation: 2s ${slideInLeft} backwards;
     `};
+  ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
 const ImageStyle = styled.img`
@@ -127,10 +129,10 @@ const Section1 = (props) => {
 
   return (
     <SectionStyle {...other} ref={rootRef}>
-      <QuoteImageBorder style={{ top: 120, right: -350, overflow: 'hidden' }} isVisible={isVisible}>
+      <QuoteImageBorder style={{ top: 120, right: -350, overflow: 'hidden' }} isVisible={isVisible} delay={0.8}>
         <QuoteImageStyle src={Quotes} alt="Quote mockup" style={{ zIndex: '1000' }} />
       </QuoteImageBorder>
-      <ImageBorder style={{ top: 500, right: 500, overflow: 'hidden' }} isVisible={isVisible}>
+      <ImageBorder style={{ top: 500, right: 500, overflow: 'hidden' }} isVisible={isVisible} delay={1}>
         <ImageStyle src={womanPool} alt="Woman by Pool" isVisible={isVisible} />
       </ImageBorder>
       <GridRow mobile tablet desktop>
