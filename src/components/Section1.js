@@ -28,20 +28,20 @@ const slideInRight = keyframes`
   
     0% {
       opacity: 0;
-      transform: translateX(-200px);
+      transform: translateX(20%);
     }
   
     60% {
       opacity: 1;
-      transform: translateX(25px);
+      transform: translateX(-2%);
     }
   
     75% {
-      transform: translateX(-10px);
+      transform: translateX(1%);
     }
   
     90% {
-      transform: translateX(5px);
+      transform: translateX(-0.5%);
     }
   
     to {
