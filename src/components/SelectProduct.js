@@ -6,6 +6,8 @@ import { Text, Title } from 'styledComponents';
 import GridCol from 'components/GridCol';
 import GridRow from 'components/GridRow';
 import { LifeTile, DisabilityTile, HomeTile, RentersTile } from 'icons';
+import CtaButton from './CtaButton';
+import { ChevronRight } from 'icons';
 
 const Product = styled.li`
   display: flex;
@@ -30,9 +32,16 @@ const Tile = styled.div`
   cursor: pointer;
 
   &:hover {
-    border: 5px solid #fff;
+    border: 5px solid #d84713;
     background-color: #d84713;
   }
+
+  ${({ selectedProduct }) =>
+    selectedProduct &&
+    `
+    border: 5px solid #d84713;
+    background-color: #d84713;
+  `}
 `;
 
 const TileContent = styled.div`
@@ -50,8 +59,8 @@ const getProductId = (name) => {
 
 const SelectProduct = () => {
   const { name } = useParams();
-  const [selectedProductId, setSelectedProductId] = useState(false);
-  const [hovered, setHovered] = useState(false);
+  const [selectedProduct, setSelectedProductId] = useState(-1);
+  const [hovered, setHovered] = useState(-1);
   return (
     <>
       <GridRow style={{ paddingTop: 160 }}>
@@ -72,16 +81,23 @@ const SelectProduct = () => {
         <GridCol desktop={3}>
           <Tile
             delay={0}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-            onClick={() => setSelectedProductId(true)}
+            onMouseEnter={() => setHovered(0)}
+            onMouseLeave={() => setHovered(-1)}
+            onClick={() => setSelectedProductId(0)}
+            hovered={hovered}
+            selectedProduct={selectedProduct === 0}
           >
             <TileContent>
-              <LifeTile size={6} hovered={hovered} />
+              <LifeTile size={6} hovered={hovered === 0 || selectedProduct === 0} />
               <Title
                 size="15"
                 color="#2B2727"
-                style={{ paddingTop: '30px', paddingBottom: '10px', letterSpacing: '2px', color: hovered && '#fff' }}
+                style={{
+                  paddingTop: '30px',
+                  paddingBottom: '10px',
+                  letterSpacing: '2px',
+                  color: hovered === 0 || selectedProduct === 0 ? '#fff' : '#000',
+                }}
               >
                 LIFE INSURANCE
               </Title>
@@ -89,13 +105,25 @@ const SelectProduct = () => {
           </Tile>
         </GridCol>
         <GridCol desktop={3}>
-          <Tile delay={0} onClick={() => setSelectedProductId(true)}>
+          <Tile
+            delay={0}
+            onMouseEnter={() => setHovered(1)}
+            onMouseLeave={() => setHovered(-1)}
+            onClick={() => setSelectedProductId(1)}
+            hovered={hovered}
+            selectedProduct={selectedProduct === 1}
+          >
             <TileContent>
-              <DisabilityTile size={6} />
+              <DisabilityTile size={6} hovered={hovered === 1 || selectedProduct === 1} />
               <Title
                 size="15"
                 color="#2B2727"
-                style={{ paddingTop: '30px', paddingBottom: '10px', letterSpacing: '2px' }}
+                style={{
+                  paddingTop: '30px',
+                  paddingBottom: '10px',
+                  letterSpacing: '2px',
+                  color: hovered === 1 || selectedProduct === 1 ? '#fff' : '#000',
+                }}
               >
                 DISABILITY INSURANCE
               </Title>
@@ -103,13 +131,25 @@ const SelectProduct = () => {
           </Tile>
         </GridCol>
         <GridCol desktop={3}>
-          <Tile delay={0} onClick={() => setSelectedProductId(true)}>
+          <Tile
+            delay={0}
+            onMouseEnter={() => setHovered(2)}
+            onMouseLeave={() => setHovered(-1)}
+            onClick={() => setSelectedProductId(2)}
+            hovered={hovered}
+            selectedProduct={selectedProduct === 2}
+          >
             <TileContent>
-              <HomeTile size={6} />
+              <HomeTile size={6} hovered={hovered === 2 || selectedProduct === 2} />
               <Title
                 size="15"
                 color="#2B2727"
-                style={{ paddingTop: '30px', paddingBottom: '10px', letterSpacing: '2px' }}
+                style={{
+                  paddingTop: '30px',
+                  paddingBottom: '10px',
+                  letterSpacing: '2px',
+                  color: hovered === 2 || selectedProduct === 2 ? '#fff' : '#000',
+                }}
               >
                 HOME INSURANCE
               </Title>
@@ -117,19 +157,45 @@ const SelectProduct = () => {
           </Tile>
         </GridCol>
         <GridCol desktop={3}>
-          <Tile delay={0} onClick={() => setSelectedProductId(true)}>
+          <Tile
+            delay={0}
+            onMouseEnter={() => setHovered(3)}
+            onMouseLeave={() => setHovered(-1)}
+            onClick={() => setSelectedProductId(3)}
+            hovered={hovered}
+            selectedProduct={selectedProduct === 3}
+          >
             <TileContent>
-              <RentersTile size={6} />
+              <RentersTile size={6} hovered={hovered === 3 || selectedProduct === 3} />
               <Title
                 size="15"
                 color="#2B2727"
-                style={{ paddingTop: '30pxs', paddingBottom: '10px', letterSpacing: '2px' }}
+                style={{
+                  paddingTop: '30px',
+                  paddingBottom: '10px',
+                  letterSpacing: '2px',
+                  color: hovered === 3 || selectedProduct === 3 ? '#fff' : '#000',
+                }}
               >
                 RENTERS INSURANCE
               </Title>
             </TileContent>
           </Tile>
         </GridCol>
+      </GridRow>
+      <GridRow desktop style={{ paddingTop: 50, textAlign: 'center' }}>
+        <GridCol desktop={4}></GridCol>
+        <GridCol desktop={4}>
+          {selectedProduct !== -1 && (
+            <CtaButton style={{ width: '50%' }}>
+              <Title size="15" style={{ paddingRight: 3 }}>
+                Get Started
+              </Title>
+              <ChevronRight />
+            </CtaButton>
+          )}
+        </GridCol>
+        <GridCol desktop={4}></GridCol>
       </GridRow>
     </>
   );
