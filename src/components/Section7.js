@@ -33,7 +33,7 @@ const WindowBorder = styled.div`
 
 const QuestionsBorder = styled.div`
   position: absolute;
-  height: 700px;
+  height: 600px;
   border-radius: 5px;
   z-index: 999;
 `;
@@ -51,7 +51,7 @@ const Section3 = (props) => {
       <WindowBorder style={{ top: 50, right: 100, overflow: 'hidden' }}>
         <ImageStyle src={window} alt="window" />
       </WindowBorder>
-      <QuestionsBorder style={{ top: 65, left: -100, overflow: 'hidden' }}>
+      <QuestionsBorder style={{ top: 125, left: -50, overflow: 'hidden' }}>
         <ImageStyle src={Questions} alt="Questions mockup" />
       </QuestionsBorder>
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 30px 0 0', maxWidth: 'none' }}>
