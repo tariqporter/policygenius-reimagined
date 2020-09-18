@@ -17,7 +17,7 @@ const SectionStyle = styled.div`
   overflow: hidden;
 `;
 
-const slideInRight = keyframes`
+const slideInLeft = keyframes`
     from,
     60%,
     75%,
@@ -98,7 +98,7 @@ const ImageBorder = styled.div`
   ${({ isVisible }) =>
     isVisible &&
     css`
-      animation: 2s ${slideInRight} backwards;
+      animation: 2s ${slideInLeft} backwards;
     `};
 `;
 
@@ -111,7 +111,7 @@ const ImageStyle = styled.img`
   ${({ isVisible }) =>
     isVisible &&
     css`
-      animation: 2s ${slideInRight} backwards;
+      animation: 2s ${slideInLeft} backwards;
     `};
 `;
 
