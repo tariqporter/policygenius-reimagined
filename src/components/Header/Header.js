@@ -24,7 +24,7 @@ const HeaderStyle = styled.div`
   height: 80px;
   overflow-x: hidden;
   transition: background-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-color: ${({ isScrolling }) => (isScrolling ? '#000' : '#d84713')};
+  background-color: ${({ isScrolling, isOpen }) => (isScrolling || isOpen ? '#000' : '#d84713')};
 `;
 
 const NavSection = styled.div`
@@ -73,10 +73,12 @@ const LogoSection = styled.div`
 const Header = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [vertical, setVertical] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const toggleVertical = (value) => {
     if (!value?.children) {
       setVertical(null);
       setIsScrolling(false);
+      setIsOpen(true);
     } else {
       setVertical(value);
       setIsScrolling(true);
@@ -96,8 +98,12 @@ const Header = () => {
   }, []);
 
   return (
-    <HeaderWrapper>
-      <HeaderStyle isScrolling={isScrolling} style={{ paddingRight: 64, paddingLeft: 64 }}>
+    <HeaderWrapper
+      onMouseLeave={() => {
+        setIsOpen(false);
+      }}
+    >
+      <HeaderStyle isScrolling={isScrolling} isOpen={isOpen} style={{ paddingRight: 64, paddingLeft: 64 }}>
         <LogoSection>
           <Link to="/">
             <HeaderLogo />
@@ -112,7 +118,6 @@ const Header = () => {
               }}
               onMouseLeave={() => {
                 toggleVertical(null);
-                setIsScrolling(false);
               }}
             >
               <Title size="15">{navLink.name}</Title>
