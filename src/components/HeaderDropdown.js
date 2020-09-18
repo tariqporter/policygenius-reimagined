@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
+import HeaderContent from './HeaderContent';
 
 const HeaderDropdownStyle = styled.div`
   display: flex;
   background-color: #000;
   overflow: hidden;
-  position: absolute;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
   z-index: 100;
@@ -20,7 +20,8 @@ const HeaderDropdownStyle = styled.div`
       : `
     opacity: 0;
     height: 0;
-`}
+`}//   opacity: 1;
+//   height: 450px;
 `;
 
 const Backdrop = styled.div`
@@ -33,13 +34,24 @@ const Backdrop = styled.div`
   height: 100%;
 `;
 
+const HeaderContentStyle = styled.div`
+  display: flex;
+  padding: 64px;
+`;
+
 const HeaderDropdown = (props) => {
-  const { visible, ...other } = props;
+  const { vertical, ...other } = props;
   const [focusInside, setFocusInside] = useState(false);
-  const [display, setDisplay] = useState(visible || focusInside);
+  const [display, setDisplay] = useState(vertical || focusInside);
+  const [selectedVertical, setSelectedVertical] = useState(null);
+
   useEffect(() => {
-    setDisplay(visible || focusInside);
-  }, [visible, focusInside]);
+    setDisplay(vertical || focusInside);
+  }, [vertical, focusInside]);
+
+  useEffect(() => {
+    if (vertical) setSelectedVertical(vertical);
+  }, [vertical]);
 
   return (
     <>
@@ -48,7 +60,11 @@ const HeaderDropdown = (props) => {
         onMouseEnter={() => setFocusInside(true)}
         onMouseLeave={() => setFocusInside(false)}
         {...other}
-      ></HeaderDropdownStyle>
+      >
+        <HeaderContentStyle>
+          <HeaderContent selectedVertical={selectedVertical} />
+        </HeaderContentStyle>
+      </HeaderDropdownStyle>
       {display && createPortal(<Backdrop />, document.body)}
     </>
   );

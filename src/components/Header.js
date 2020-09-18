@@ -7,7 +7,16 @@ import { Title } from 'styledComponents';
 import CtaButton from './CtaButton';
 import { ChevronRight } from 'icons';
 import HeaderDropdown from './HeaderDropdown';
-import { createPortal } from 'react-dom';
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+`;
 
 const HeaderStyle = styled.div`
   display: flex;
@@ -16,11 +25,6 @@ const HeaderStyle = styled.div`
   overflow-x: hidden;
   transition: background-color 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
   background-color: ${({ isScrolling }) => (isScrolling ? '#000' : '#d84713')};
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
 `;
 
 const NavSection = styled.div`
@@ -68,14 +72,13 @@ const LogoSection = styled.div`
 
 const Header = () => {
   const [isScrolling, setIsScrolling] = useState(false);
-  const [visible, setVisible] = useState(false);
-  const toggleVisible = (value) => {
-    console.log(value);
-    setVisible(value);
+  const [vertical, setVertical] = useState(false);
+  const toggleVertical = (value) => {
+    setVertical(value);
   };
 
   useEffect(() => {
-    const onScroll = (e) => {
+    const onScroll = () => {
       setIsScrolling(window.pageYOffset === 0);
     };
     window.addEventListener('scroll', onScroll);
@@ -83,7 +86,7 @@ const Header = () => {
   }, []);
 
   return (
-    <>
+    <HeaderWrapper>
       <HeaderStyle isScrolling={isScrolling} style={{ paddingRight: 64, paddingLeft: 64 }}>
         <LogoSection>
           <Link to="/">
@@ -94,8 +97,8 @@ const Header = () => {
           {navLinks.map((navLink) => (
             <NavLink
               key={navLink.id}
-              onMouseEnter={() => toggleVisible(true)}
-              onMouseLeave={() => toggleVisible(false)}
+              onMouseEnter={() => toggleVertical(navLink)}
+              onMouseLeave={() => toggleVertical(null)}
             >
               <Title size="15">{navLink.name}</Title>
               {navLink.children && <ChevronDown style={{ marginLeft: 5, width: 14, height: 20 }} />}
@@ -114,8 +117,8 @@ const Header = () => {
           </CtaButton>
         </CTASection>
       </HeaderStyle>
-      <HeaderDropdown visible={visible} />
-    </>
+      <HeaderDropdown vertical={vertical} />
+    </HeaderWrapper>
   );
 };
 
