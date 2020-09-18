@@ -6,13 +6,35 @@ const PgLogoBlack = (props) => {
 
   return (
     <div style={mergedStyle} {...other}>
-      <svg width="271" height="234" viewBox="0 0 271 234" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="180.5" cy="143.5" r="90.5" transform="rotate(-180 180.5 143.5)" fill="#D84713" />
-        <circle cx="90.5" cy="90.5" r="90.5" transform="rotate(-180 90.5 90.5)" fill="#F2E5CE" />
-        <path
-          d="M119.279 102.688C119.279 96.784 115.535 91.888 109.775 91.888C109.343 91.888 108.623 91.888 107.903 92.032L107.039 92.176L105.887 91.024C107.183 85.408 112.799 77.776 122.447 68.992L118.991 65.104C102.431 74.32 93.0707 86.704 93.0707 100.096C93.0707 110.464 98.5427 116.08 107.039 116.08C113.951 116.08 119.279 109.456 119.279 102.688ZM85.4387 102.688C85.4387 96.784 81.6947 91.888 75.9347 91.888C75.5027 91.888 74.7827 91.888 74.0627 92.032L73.1987 92.176L72.0467 91.024C73.3427 85.408 78.9587 77.776 88.6067 68.992L85.1507 65.104C68.5907 74.32 59.2307 86.704 59.2307 100.096C59.2307 110.464 64.7027 116.08 73.1987 116.08C80.1107 116.08 85.4387 109.456 85.4387 102.688Z"
-          fill="white"
-        />
+      <svg width="323" height="286" viewBox="0 0 323 286" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_d)">
+          <circle cx="216.5" cy="159.5" r="90.5" transform="rotate(-180 216.5 159.5)" fill="#D84713" />
+          <circle cx="126.5" cy="106.5" r="90.5" transform="rotate(-180 126.5 106.5)" fill="#F2E5CE" />
+          <path
+            d="M155.279 118.688C155.279 112.784 151.535 107.888 145.775 107.888C145.343 107.888 144.623 107.888 143.903 108.032L143.039 108.176L141.887 107.024C143.183 101.408 148.799 93.776 158.447 84.992L154.991 81.104C138.431 90.32 129.071 102.704 129.071 116.096C129.071 126.464 134.543 132.08 143.039 132.08C149.951 132.08 155.279 125.456 155.279 118.688ZM121.439 118.688C121.439 112.784 117.695 107.888 111.935 107.888C111.503 107.888 110.783 107.888 110.063 108.032L109.199 108.176L108.047 107.024C109.343 101.408 114.959 93.776 124.607 84.992L121.151 81.104C104.591 90.32 95.2307 102.704 95.2307 116.096C95.2307 126.464 100.703 132.08 109.199 132.08C116.111 132.08 121.439 125.456 121.439 118.688Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_d"
+            x="0"
+            y="0"
+            width="323"
+            height="286"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="effect1_dropShadow" />
+            <feOffset dx="-10" dy="10" />
+            <feGaussianBlur stdDeviation="12.5" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0.168627 0 0 0 0 0.152941 0 0 0 0 0.152941 0 0 0 0.08 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+          </filter>
+        </defs>
       </svg>
     </div>
   );

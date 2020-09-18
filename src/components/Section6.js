@@ -10,7 +10,7 @@ import Testimonials from 'assets/Testimonials.png';
 const SectionStyle = styled.div`
   height: 615px;
   margin-top: 150px;
-  margin-bottom: 1350px;
+  margin-bottom: 400px;
 `;
 
 const SectionBg = styled.div`
@@ -35,9 +35,13 @@ const Section3 = (props) => {
 
   return (
     <SectionStyle {...other} style={{ position: 'relative' }}>
-      <WindowBorder style={{ top: 100, right: 650, overflow: 'hidden' }}>
+      <WindowBorder style={{ top: 100, left: 500, overflow: 'hidden' }}>
         <ImageStyle src={Testimonials} alt="window" />
       </WindowBorder>
+      <Testimonial1 style={{ position: 'absolute', zIndex: 999, top: 50, right: 625 }} />
+      <Testimonial2 style={{ position: 'absolute', zIndex: 999, top: 375, right: 750 }} />
+      <QuotesCircles style={{ position: 'absolute', zIndex: 999, top: 450, right: 250 }} />
+
       <svg width="1310" height="615" style={{ position: 'absolute', top: 300, right: 0 }}>
         <rect width="1310" height="615" style={{ fill: '#F2E5CE' }} />
       </svg>
@@ -45,7 +49,6 @@ const Section3 = (props) => {
         <GridCol mobile={3} tablet={10} desktop={9} style={{ position: 'relative' }}>
           <SectionBg>
             <GridRow mobile tablet desktop={9}>
-              <GridCol mobile={1} tablet={3} desktop={2} />
               <GridCol mobile={2} tablet={5} desktop={3} style={{ paddingTop: '185px' }}>
                 <Title as="h1" size="64" color="#fff">
                   Testimonials
@@ -60,13 +63,14 @@ const Section3 = (props) => {
                   <ChevronRight />
                 </CtaButton>
               </GridCol>
-              <GridCol mobile={1} tablet={3} desktop={4} />
+              <GridCol mobile={1} tablet={3} desktop={2}></GridCol>
+              <GridCol mobile={1} tablet={3} desktop={4}></GridCol>
             </GridRow>
           </SectionBg>
         </GridCol>
         <GridCol mobile={1} tablet={2} desktop={3} style={{ paddingTop: '50px', paddingLeft: '50px' }}></GridCol>
       </GridRow>
-      <GridRow desktop style={{ marginTop: 350, maxWidth: 'none' }}>
+      {/* <GridRow desktop style={{ marginTop: 350, maxWidth: 'none' }}>
         <GridCol desktop={3}></GridCol>
         <GridCol desktop={4}>
           <Testimonial1 />
@@ -86,7 +90,7 @@ const Section3 = (props) => {
           <Testimonial2 />
         </GridCol>
         <GridCol desktop={1}></GridCol>
-      </GridRow>
+      </GridRow> */}
     </SectionStyle>
   );
 };

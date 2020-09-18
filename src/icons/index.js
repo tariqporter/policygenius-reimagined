@@ -8,5 +8,4 @@ export { default as HomeTile } from './HomeTile';
 export { default as RentersTile } from './RentersTile';
 export { default as Testimonial1 } from './Testimonial1';
 export { default as Testimonial2 } from './Testimonial2';
-export { default as PgCircles } from './PgCircles';
 export { default as QuotesCircles } from './QuotesCircles';
