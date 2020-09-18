@@ -58,7 +58,6 @@ const ImageBorder = styled.div`
   background: #fff;
   padding: 40px;
   width: 400px;
-  height: 400px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
   border: 1px solid #ede8e5;
 `;

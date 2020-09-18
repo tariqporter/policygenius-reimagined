@@ -67,6 +67,14 @@ const ImageBorder = styled.div`
 `;
 
 const ImageStyle = styled.img`
+  width: 450px;
+  object-fit: cover;
+  object-position: top;
+  max-height: 100%;
+  animation: 1.25s ${slideInDown};
+`;
+
+const QuoteImageStyle = styled.img`
   max-width: 100%;
   max-height: 100%;
   animation: 1.25s ${slideInDown};
@@ -77,7 +85,7 @@ const Section1 = (props) => {
   return (
     <SectionStyle {...other}>
       <QuoteImageBorder style={{ top: 120, right: -350, overflow: 'hidden' }}>
-        <ImageStyle src={Quotes} alt="Quote mockup" style={{ zIndex: '1000' }} />
+        <QuoteImageStyle src={Quotes} alt="Quote mockup" style={{ zIndex: '1000' }} />
       </QuoteImageBorder>
       <ImageBorder style={{ top: 500, right: 500, overflow: 'hidden' }}>
         <ImageStyle src={womanPool} alt="Woman by Pool" />
