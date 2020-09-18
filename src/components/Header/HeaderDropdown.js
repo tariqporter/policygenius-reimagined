@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import HeaderContent from './HeaderContent';
 
 const HeaderDropdownStyle = styled.div`
-  display: flex;
+  display: grid;
   background-color: #000;
   overflow: hidden;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -15,13 +15,12 @@ const HeaderDropdownStyle = styled.div`
     visible
       ? `
     opacity: 1;
-    height: 450px;
+    height: 500px;
   `
       : `
-    opacity: 0;
-    height: 0;
-`}// opacity: 1;
-  // height: 450px;
+      opacity: 0;
+ height: 0;
+`}
 `;
 
 const Backdrop = styled.div`
@@ -32,11 +31,6 @@ const Backdrop = styled.div`
   background-color: #000;
   width: 100%;
   height: 100%;
-`;
-
-const HeaderContentStyle = styled.div`
-  display: flex;
-  padding: 64px;
 `;
 
 const HeaderDropdown = (props) => {
@@ -61,9 +55,7 @@ const HeaderDropdown = (props) => {
         onMouseLeave={() => setFocusInside(false)}
         {...other}
       >
-        <HeaderContentStyle>
-          <HeaderContent selectedVertical={selectedVertical} />
-        </HeaderContentStyle>
+        <HeaderContent selectedVertical={selectedVertical} />
       </HeaderDropdownStyle>
       {display && createPortal(<Backdrop />, document.body)}
     </>

@@ -1,28 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Title, Text } from 'styledComponents';
+import GridCol from 'components/GridCol';
+import GridRow from 'components/GridRow';
+import { Title, Subtitle, AccentTitle } from 'styledComponents';
 import CtaButton from 'components/CtaButton';
 import { ChevronRight } from 'icons';
 import { PRODUCTS_NAME } from 'data/navLinks';
 
 const WhiteTitle = styled(Title)`
   color: #fff;
+  hr {
+    width: 65px;
+    border-bottom: 5px solid #fff;
+  }
 `;
 
-const WhiteText = styled(Text)`
+const InsuranceAccentTitle = styled(AccentTitle)`
   color: #fff;
+  margin-bottom: 8px;
+  hr {
+    width: 65px;
+    border-bottom: 5px solid #fff;
+  }
 `;
 
-const NavLink = styled(Text)`
+const InsuranceAccentSubTitle = styled(Subtitle)`
+  color: #fff;
+  font-weight: 700;
+  line-height: 35px;
+`;
+
+const NavLink = styled(Subtitle)`
   color: #fff;
   transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
   padding: 6px 0;
+  font-weight: 700;
 
   ${({ selected }) => selected && `color: #D84713;`}
 `;
 
-const WhiteLink = styled.a`
+const WhiteLink = styled(Subtitle)`
   color: #fff;
   text-decoration: none;
   display: block;
@@ -50,37 +68,41 @@ const ProductVerticalRight = (props) => {
   const columns = selectedInnerVertical?.columns || [];
 
   return (
-    <div style={{ display: 'flex', marginLeft: 300 }}>
-      <div>
-        <div style={{ width: 300 }}>
-          <WhiteTitle size="24">{name} Insurance</WhiteTitle>
-          <WhiteText size="18">Easy streamlined process. We do the work so you dont have to. </WhiteText>
+    <GridRow desktop={8}>
+      <GridCol desktop={4} style={{ display: 'grid', height: 400, marginTop: 40 }}>
+        <div style={{ height: 388 }}>
+          <InsuranceAccentTitle size="24">{name} Insurance</InsuranceAccentTitle>
+          <InsuranceAccentSubTitle size="18">
+            Easy streamlined process. We do the work so you dont have to.{' '}
+          </InsuranceAccentSubTitle>
+          <div style={{ textAlign: 'right', paddingTop: 5 }}>
+            <ImageStyle src={img} alt={alt} style={{ height: 226 }} />
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <AlternateCtaButton style={{ width: 250 }}>
+              <Title size="15" style={{ paddingRight: 3 }}>
+                {ctaText}
+              </Title>
+              <ChevronRight />
+            </AlternateCtaButton>
+          </div>
         </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <ImageStyle src={img} alt={alt} style={{ width }} />
-          <AlternateCtaButton style={{ width: 200 }}>
-            <Title size="15" style={{ paddingRight: 3 }}>
-              {ctaText}
-            </Title>
-            <ChevronRight />
-          </AlternateCtaButton>
-        </div>
-      </div>
-
-      <div style={{ display: 'flex' }}>
-        {columns.map((column) => (
-          <div key={column.id} style={{ margin: '0 20px' }}>
-            <WhiteTitle size="24">{column.name}</WhiteTitle>
+      </GridCol>
+      {columns.map((column) => (
+        <GridCol desktop={2} style={{ display: 'grid', height: 400, marginTop: 40 }}>
+          <div key={column.id}>
+            <WhiteTitle size="18">{column.name}</WhiteTitle>
             {column.links.map((link) => (
-              <WhiteLink key={link.id} href={link.href}>
-                {link.name}
-              </WhiteLink>
+              <a href={link.href} style={{ textDecoration: 'none' }}>
+                <WhiteLink size="14" key={link.id} href={link.href}>
+                  {link.name}
+                </WhiteLink>
+              </a>
             ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </GridCol>
+      ))}
+    </GridRow>
   );
 };
 
@@ -94,10 +116,11 @@ const ProductVerticalLeft = (props) => {
   }, [navLinks]);
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: 120 }}>
-        <WhiteTitle size="24" style={{ marginBottom: 20 }}>
+    <GridRow>
+      <GridCol desktop={4} style={{ marginTop: 40, marginBottom: 60, borderRight: '0.5px solid #fff' }}>
+        <WhiteTitle size="24" style={{ marginBottom: 8 }}>
           Insurance
+          <hr align="left" />
         </WhiteTitle>
         {navLinks.map((navLink) => (
           <NavLink
@@ -109,9 +132,11 @@ const ProductVerticalLeft = (props) => {
             {navLink.name}
           </NavLink>
         ))}
-      </div>
-      <ProductVerticalRight selectedInnerVertical={selectedInnerVertical} />
-    </div>
+      </GridCol>
+      <GridCol desktop={8}>
+        <ProductVerticalRight selectedInnerVertical={selectedInnerVertical} />
+      </GridCol>
+    </GridRow>
   );
 };
 
