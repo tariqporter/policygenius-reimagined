@@ -49,6 +49,7 @@ const WindowBorder = styled.div`
   position: absolute;
   z-index: 999;
   width: 400px;
+  opacity: 0;
   ${({ isVisible }) =>
     isVisible &&
     css`
