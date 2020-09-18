@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { Title, Subtitle } from 'styledComponents';
 import CtaButton from './CtaButton';
 import GridCol from './GridCol';
@@ -7,38 +7,6 @@ import GridRow from './GridRow';
 import { ChevronRight } from 'icons';
 import PhoneMockup from 'assets/Phone_Mockup.png';
 import pool from 'assets/pool.png';
-
-const slideInRight = keyframes`
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-  
-    0% {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-  
-    60% {
-      opacity: 1;
-      transform: translateX(25px);
-    }
-  
-    75% {
-      transform: translateX(-10px);
-    }
-  
-    90% {
-      transform: translateX(5px);
-    }
-  
-    to {
-      transform: translateX(0);
-    }
-`;
 
 const SectionStyle = styled.div`
   height: 750px;
@@ -71,7 +39,7 @@ const PhoneImageBorder = styled.div`
   position: absolute;
   height: 700px;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 999;
 `;
 
 const Section5 = (props) => {
