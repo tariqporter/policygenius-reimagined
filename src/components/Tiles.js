@@ -1,10 +1,11 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import styled, { css, keyframes } from 'styled-components';
 import { Title } from 'styledComponents';
 import womanCouch from 'assets/woman_on_couch.png';
 import womanWill from 'assets/woman_reading_will.png';
 import flower from 'assets/flower.png';
 import ReadMore from 'components/ReadMore';
+import useIsVisible from 'hooks/useIsVisible';
 
 const slideInDown = keyframes`
     from,
@@ -70,23 +71,7 @@ const ImageStyle = styled.img`
 
 const Tiles = (props) => {
   const rootRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useLayoutEffect(() => {
-    const onScroll = (e) => {
-      const { height } = rootRef.current.getBoundingClientRect();
-      const offsetTop = rootRef.current.offsetTop;
-      const pageBottom = window.pageYOffset + window.innerHeight;
-      if (window.pageYOffset < offsetTop + height && isVisible) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(pageBottom > offsetTop);
-      }
-    };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const isVisible = useIsVisible(rootRef);
 
   return (
     <TilesStyle ref={rootRef}>

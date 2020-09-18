@@ -1,34 +1,11 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Title, Subtitle } from 'styledComponents';
-import CtaButton from './CtaButton';
-import GridCol from './GridCol';
-import GridRow from './GridRow';
-import { ChevronRight, LifeTile, DisabilityTile, HomeTile, RentersTile } from 'icons';
-
-const skew = keyframes`
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    }
-  
-    0% {
-      opacity: 0;
-      transform-origin: top;
-      transform: rotateX(75deg) rotateY(10deg) rotateZ(-9deg);
-    }
-  
-    60% {
-      opacity: 1;
-    }
-
-    to {
-      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)
-    }
-`;
+import styled from 'styled-components';
+import { Subtitle, Title } from 'styledComponents';
+import CtaButton from 'components/CtaButton';
+import GridCol from 'components/GridCol';
+import GridRow from 'components/GridRow';
+import { ChevronRight } from 'icons';
+import Leaves from 'components/Leaves';
 
 const SectionStyle = styled.div`
   height: 615px;
@@ -40,22 +17,6 @@ const SectionBg = styled.div`
   background: #007561;
   padding-top: 30px;
   height: 100%;
-`;
-
-const Tiles = styled.div`
-  position: relative;
-`;
-
-const Tile = styled.div`
-  position: absolute;
-  background: #fff;
-  padding: 12px;
-  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
-  animation: 1.25s ${skew};
-  border: 1px solid #ede8e5;
-
-  ${({ top }) => `top: ${top}px;`}
-  ${({ left }) => `left: ${left}px;`}
 `;
 
 const Section3 = (props) => {
@@ -83,25 +44,11 @@ const Section3 = (props) => {
                   <ChevronRight />
                 </CtaButton>
               </GridCol>
-              <GridCol mobile={1} tablet={5} desktop={3} />
             </GridRow>
           </SectionBg>
         </GridCol>
         <GridCol mobile={1} tablet={2} desktop={2} style={{ paddingTop: '50px' }}>
-          <Tiles>
-            <Tile top={0} left={0}>
-              <LifeTile size={6} />
-            </Tile>
-            <Tile top={100} left={-200}>
-              <DisabilityTile size={6} />
-            </Tile>
-            <Tile top={280} left={-100}>
-              <HomeTile size={6} />
-            </Tile>
-            <Tile top={380} left={-300}>
-              <RentersTile size={6} />
-            </Tile>
-          </Tiles>
+          <Leaves />
         </GridCol>
       </GridRow>
     </SectionStyle>
