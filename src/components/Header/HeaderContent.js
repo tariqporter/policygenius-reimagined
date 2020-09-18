@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Title, Text } from 'styledComponents';
-import saveForRetirement from 'assets/save_for_retirement.png';
-import CtaButton from './CtaButton';
+import CtaButton from 'components/CtaButton';
 import { ChevronRight } from 'icons';
+import { PRODUCTS_NAME } from 'data/navLinks';
 
 const WhiteTitle = styled(Title)`
   color: #fff;
@@ -22,8 +22,11 @@ const NavLink = styled(Text)`
   ${({ selected }) => selected && `color: #D84713;`}
 `;
 
-const HeaderLeft = styled.div`
-  //   width: 368px;
+const WhiteLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
 `;
 
 const ImageStyle = styled.img`
@@ -41,19 +44,41 @@ const ProductVerticalRight = (props) => {
 
   const name = selectedInnerVertical?.name || '';
   const ctaText = selectedInnerVertical?.ctaText || '';
+  const img = selectedInnerVertical?.image || '';
+  const alt = selectedInnerVertical?.alt || '';
+  const width = selectedInnerVertical?.width || 0;
+  const columns = selectedInnerVertical?.columns || [];
 
   return (
-    <div style={{ marginLeft: 300 }}>
-      <WhiteTitle size="24">{name} Insurance</WhiteTitle>
-      <WhiteText size="18">Easy streamlined process. We do the work so you dont have to. </WhiteText>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <ImageStyle src={saveForRetirement} alt="Save for retirement" />
-        <AlternateCtaButton style={{ width: 200 }}>
-          <Title size="15" style={{ paddingRight: 3 }}>
-            {ctaText}
-          </Title>
-          <ChevronRight />
-        </AlternateCtaButton>
+    <div style={{ display: 'flex', marginLeft: 300 }}>
+      <div>
+        <div style={{ width: 300 }}>
+          <WhiteTitle size="24">{name} Insurance</WhiteTitle>
+          <WhiteText size="18">Easy streamlined process. We do the work so you dont have to. </WhiteText>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <ImageStyle src={img} alt={alt} style={{ width }} />
+          <AlternateCtaButton style={{ width: 200 }}>
+            <Title size="15" style={{ paddingRight: 3 }}>
+              {ctaText}
+            </Title>
+            <ChevronRight />
+          </AlternateCtaButton>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex' }}>
+        {columns.map((column) => (
+          <div key={column.id} style={{ margin: '0 20px' }}>
+            <WhiteTitle size="24">{column.name}</WhiteTitle>
+            {column.links.map((link) => (
+              <WhiteLink key={link.id} href={link.href}>
+                {link.name}
+              </WhiteLink>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -92,12 +117,17 @@ const ProductVerticalLeft = (props) => {
 
 const HeaderContent = (props) => {
   const { selectedVertical, ...other } = props;
-  const SelectedVertical = ProductVerticalLeft;
+
+  let SelectedVertical = null;
+  if (selectedVertical?.name === PRODUCTS_NAME) {
+    SelectedVertical = ProductVerticalLeft;
+  } else {
+    return null;
+  }
+
   return (
-    <div>
-      <HeaderLeft {...other}>
-        <SelectedVertical selectedVertical={selectedVertical} />
-      </HeaderLeft>
+    <div {...other}>
+      <SelectedVertical selectedVertical={selectedVertical} />
     </div>
   );
 };
