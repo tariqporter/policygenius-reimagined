@@ -71,7 +71,7 @@ const PhoneImageBorder = styled.div`
   position: absolute;
   height: 700px;
   border-radius: 5px;
-  z-index: 1000;
+  z-index: 999;
 `;
 
 const Section5 = (props) => {
