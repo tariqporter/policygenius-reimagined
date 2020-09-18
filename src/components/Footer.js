@@ -11,7 +11,6 @@ import DashboardMockup from 'assets/Dashboard_Mockup.png';
 const SectionStyle = styled.div`
   height: 400px;
   margin-top: 150px;
-  margin-bottom: 50px;
 `;
 
 const SectionBg = styled.div`
