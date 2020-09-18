@@ -74,8 +74,13 @@ const Header = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [vertical, setVertical] = useState(false);
   const toggleVertical = (value) => {
-    if (!value?.children) setVertical(null);
-    else setVertical(value);
+    if (!value?.children) {
+      setVertical(null);
+      setIsScrolling(false);
+    } else {
+      setVertical(value);
+      setIsScrolling(true);
+    }
   };
 
   useEffect(() => {
@@ -104,7 +109,6 @@ const Header = () => {
               key={navLink.id}
               onMouseEnter={() => {
                 toggleVertical(navLink);
-                setIsScrolling(true);
               }}
               onMouseLeave={() => {
                 toggleVertical(null);
