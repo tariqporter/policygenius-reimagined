@@ -41,6 +41,30 @@ const slideInRight = keyframes`
     }
 `;
 
+const skew = keyframes`
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      transform-origin: top;
+      transform: rotateX(75deg) rotateY(10deg) rotateZ(-9deg);
+    }
+  
+    60% {
+      opacity: 1;
+    }
+
+    to {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg)
+    }
+`;
+
 const SectionStyle = styled.div`
   height: 500px;
   margin-top: 150px;
@@ -77,22 +101,30 @@ const StepAbsolute = styled(Step)`
   position: absolute;
   ${({ top }) => `top: ${top}px;`}
   ${({ left }) => `left: ${left}px;`}
+
+  ${({ isVisible }) =>
+    isVisible &&
+    css`
+      animation: 1.25s ${skew} backwards;
+    `};
+
+  ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
 const Section2 = (props) => {
   const { ...other } = props;
-  const imageRef = useRef(null);
-  const isVisible = useIsVisible(imageRef);
+  const rootRef = useRef(null);
+  const isVisible = useIsVisible(rootRef);
 
   return (
-    <SectionStyle {...other}>
+    <SectionStyle {...other} ref={rootRef}>
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 0 0 30px', maxWidth: 'none' }}>
         <GridCol mobile={1} tablet={2} desktop={2}></GridCol>
         <GridCol mobile={3} tablet={10} desktop={10} style={{ position: 'relative' }}>
-          <ImageBorder ref={imageRef} isVisible={isVisible}>
+          <ImageBorder isVisible={isVisible}>
             <ImageStyle src={buildingSide} alt="Side of building" />
           </ImageBorder>
-          <StepAbsolute top={200} left={-100}>
+          <StepAbsolute top={200} left={-100} isVisible={isVisible} delay={0}>
             <StepNumber>1</StepNumber>
             <div>
               <Title size="19">Learn</Title>
@@ -101,7 +133,7 @@ const Section2 = (props) => {
               </Subtitle>
             </div>
           </StepAbsolute>
-          <StepAbsolute top={350} left={0}>
+          <StepAbsolute top={350} left={0} isVisible={isVisible} delay={0.2}>
             <StepNumber>2</StepNumber>
             <div>
               <Title size="19">Compare Our Marketplace</Title>
@@ -110,7 +142,7 @@ const Section2 = (props) => {
               </Subtitle>
             </div>
           </StepAbsolute>
-          <StepAbsolute top={500} left={100}>
+          <StepAbsolute top={500} left={100} isVisible={isVisible} delay={0.4}>
             <StepNumber>3</StepNumber>
             <div>
               <Title size="19">Apply Through Policygenius</Title>
