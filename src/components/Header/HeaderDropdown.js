@@ -20,9 +20,8 @@ const HeaderDropdownStyle = styled.div`
       : `
     opacity: 0;
     height: 0;
-`}
-  opacity: 1;
-  height: 450px;
+`}// opacity: 1;
+  // height: 450px;
 `;
 
 const Backdrop = styled.div`
