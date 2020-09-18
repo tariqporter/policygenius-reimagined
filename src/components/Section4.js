@@ -24,7 +24,9 @@ const Section4 = (props) => {
       <GridRow mobile tablet desktop>
         <GridCol mobile={4} tablet={12} desktop={12}>
           <SectionHeader>
-            <Title size="54">Learn How to Protect Your Family</Title>
+            <Title size="54" style={{ paddingBottom: '30px' }}>
+              Learn How to Protect Your Family
+            </Title>
             <Subtitle size="18">Get started with some of our more popular guides and educational content</Subtitle>
           </SectionHeader>
           <Tiles />

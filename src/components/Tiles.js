@@ -66,7 +66,8 @@ const TileContent = styled.div`
 const ImageStyle = styled.img`
   max-width: 100%;
   max-height: 100%;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 `;
 
 const Tiles = (props) => {
@@ -89,7 +90,7 @@ const Tiles = (props) => {
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.3} isVisible={isVisible} style={{ marginTop: '40px' }}>
+      <Tile delay={0.3} isVisible={isVisible} style={{ marginTop: '50px' }}>
         <div>
           <ImageStyle src={womanWill} alt="Woman reading will" />
         </div>
@@ -103,7 +104,7 @@ const Tiles = (props) => {
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.6} isVisible={isVisible} style={{ marginTop: '80px' }}>
+      <Tile delay={0.6} isVisible={isVisible} style={{ marginTop: '100px' }}>
         <div>
           <ImageStyle src={flower} alt="Flower" />
         </div>

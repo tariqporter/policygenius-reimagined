@@ -49,12 +49,10 @@ const slideInDown = keyframes`
 
 const QuoteImageBorder = styled.div`
   position: absolute;
-  background: rgba(246, 249, 252, 0.5);
   height: 600px;
   box-shadow: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.1), 0 50px 100px -20px rgba(50, 50, 93, 0.25),
     0 30px 60px -30px rgba(0, 0, 0, 0.3);
   animation: 1.25s ${slideInDown};
-  border-radius: 5px;
 `;
 
 const ImageBorder = styled.div`
@@ -79,7 +77,7 @@ const Section1 = (props) => {
   return (
     <SectionStyle {...other}>
       <QuoteImageBorder style={{ top: 120, right: -350, overflow: 'hidden' }}>
-        <ImageStyle src={Quotes} alt="Quote mockup" />
+        <ImageStyle src={Quotes} alt="Quote mockup" style={{ zIndex: '1000' }} />
       </QuoteImageBorder>
       <ImageBorder style={{ top: 500, right: 500, overflow: 'hidden' }}>
         <ImageStyle src={womanPool} alt="Woman by Pool" />
