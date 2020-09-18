@@ -1,12 +1,13 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useRef } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import { Title, Subtitle } from 'styledComponents';
-import CtaButton from './CtaButton';
-import GridCol from './GridCol';
-import GridRow from './GridRow';
+import CtaButton from 'components/CtaButton';
+import GridCol from 'components/GridCol';
+import GridRow from 'components/GridRow';
 import { ChevronRight } from 'icons';
 import buildingSide from 'assets/building_side.png';
-import Step, { StepNumber } from './Step';
+import Step, { StepNumber } from 'components/Step';
+import useIsVisible from 'hooks/useIsVisible';
 
 const slideInRight = keyframes`
     from,
@@ -59,7 +60,12 @@ const ImageBorder = styled.div`
   width: 545px;
   height: 471px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25);
-  animation: 1.25s ${slideInRight};
+
+  ${({ isVisible }) =>
+    isVisible &&
+    css`
+      animation: 1.25s ${slideInRight} backwards;
+    `};
 `;
 
 const ImageStyle = styled.img`
@@ -75,13 +81,15 @@ const StepAbsolute = styled(Step)`
 
 const Section2 = (props) => {
   const { ...other } = props;
+  const imageRef = useRef(null);
+  const isVisible = useIsVisible(imageRef);
 
   return (
     <SectionStyle {...other}>
       <GridRow mobile tablet desktop style={{ height: '100%', margin: '0 0 0 30px', maxWidth: 'none' }}>
         <GridCol mobile={1} tablet={2} desktop={2}></GridCol>
         <GridCol mobile={3} tablet={10} desktop={10} style={{ position: 'relative' }}>
-          <ImageBorder>
+          <ImageBorder ref={imageRef} isVisible={isVisible}>
             <ImageStyle src={buildingSide} alt="Side of building" />
           </ImageBorder>
           <StepAbsolute top={200} left={-100}>

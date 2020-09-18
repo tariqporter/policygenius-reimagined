@@ -1,10 +1,11 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useRef } from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import { Title } from 'styledComponents';
 import womanCouch from 'assets/woman_on_couch.png';
 import womanWill from 'assets/woman_reading_will.png';
 import flower from 'assets/flower.png';
 import ReadMore from 'components/ReadMore';
+import useIsVisible from 'hooks/useIsVisible';
 
 const slideInDown = keyframes`
     from,
@@ -46,7 +47,11 @@ const Tile = styled.div`
   border: 1px solid #ede8e5;
   border-radius: 10px;
   margin: 20px;
-  animation: 1.25s ${slideInDown};
+  ${({ isVisible }) =>
+    isVisible &&
+    css`
+      animation: 1.25s ${slideInDown} backwards;
+    `};
   ${({ delay }) => `animation-delay: ${delay}s;`}
 `;
 
@@ -65,9 +70,12 @@ const ImageStyle = styled.img`
 `;
 
 const Tiles = (props) => {
+  const rootRef = useRef(null);
+  const isVisible = useIsVisible(rootRef);
+
   return (
-    <TilesStyle>
-      <Tile delay={0}>
+    <TilesStyle ref={rootRef}>
+      <Tile delay={0} isVisible={isVisible}>
         <div>
           <ImageStyle src={womanCouch} alt="Woman on couch" />
         </div>
@@ -81,7 +89,7 @@ const Tiles = (props) => {
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.3} style={{ marginTop: '40px' }}>
+      <Tile delay={0.3} isVisible={isVisible} style={{ marginTop: '40px' }}>
         <div>
           <ImageStyle src={womanWill} alt="Woman reading will" />
         </div>
@@ -95,7 +103,7 @@ const Tiles = (props) => {
           <ReadMore style={{ marginTop: 'auto' }} />
         </TileContent>
       </Tile>
-      <Tile delay={0.6} style={{ marginTop: '80px' }}>
+      <Tile delay={0.6} isVisible={isVisible} style={{ marginTop: '80px' }}>
         <div>
           <ImageStyle src={flower} alt="Flower" />
         </div>
